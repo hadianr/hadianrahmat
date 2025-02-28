@@ -8,6 +8,18 @@ export const info = {
 
   experience: [
     {
+      name: "Badan Kepagawaian Daerah Provinsi Jawa Barat",
+      location: "Tenaga Ahli - Fullstack Engineer",
+      startDate: "Oct 2024",
+      endDate: "Present",
+      description: [
+        "As a Fullstack Engineer, I leverage my extensive experience in software development to drive digital transformation within the public sector. I am instrumental in designing, developing, and maintaining critical applications that streamline civil service processes, enhancing efficiency and accessibility for thousands of employees across the region.",
+        "- Developing and optimizing full-stack applications to meet the evolving needs of the agency.",
+        "- Implementing robust and scalable solutions that ensure data security and system reliability.",
+        "- Collaborating with cross-functional teams to deliver innovative and user-centric applications.",
+      ],  
+    },
+    {
       name: "GITS Indonesia",
       location: "Engineering Manager",
       startDate: "Sep 2022",
