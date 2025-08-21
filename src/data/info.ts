@@ -2,8 +2,9 @@ export const info = {
   baseUrl: "https://astro-portfolio-uzair.vercel.app",
   name: "Hadian Rahmat",
   jobDescription: "Engineering Manager",
-  about: `I'm a passionate engineering leader with 7 years of experience in the software development field.  Previously, I thrived as a Backend Engineer and Chapter Lead Engineer, building and maintaining robust backend systems.  In my current role as Engineering Manager, I leverage my technical expertise to guide and empower high-performing teams to deliver innovative solutions.
-  Actively engaged in the IT community, I am passionate about knowledge-sharing and networking. Through participation in industry events, conferences, and online platforms, I contribute insights from my career journey and expertise in software engineering, backend development, web technologies, and cloud computing.
+  about: `From writing my first lines of code to leading engineering teams, my journey in software development has been a continuous path of growth and discovery. Over the past 8 years, I’ve had the privilege to work across diverse roles—Fullstack Engineer, Backend Engineer, Chapter Lead Backend, and Engineering Manager—building applications that solve real problems and scaling systems that impact thousands of users.
+What excites me most is not just writing code, but also empowering people. I’ve led backend chapters, guided teams, and even stepped into the public sector for 9 months to contribute to digital transformation in government. Each role has strengthened my ability to balance technical depth with leadership and strategy.
+I’m also a proud Google Cloud Professional Developer, always eager to explore new technologies, and I find joy in sharing knowledge—whether through talks, mentoring, or engaging with the IT community. For me, technology is not just about systems, but also about the people who build and grow with it.
   `,
 
   experience: [
@@ -11,7 +12,7 @@ export const info = {
       name: "Badan Kepagawaian Daerah Provinsi Jawa Barat",
       location: "Tenaga Ahli - Fullstack Engineer",
       startDate: "Oct 2024",
-      endDate: "Present",
+      endDate: "Jun 2025",
       description: [
         "As a Fullstack Engineer, I leverage my extensive experience in software development to drive digital transformation within the public sector. I am instrumental in designing, developing, and maintaining critical applications that streamline civil service processes, enhancing efficiency and accessibility for thousands of employees across the region.",
         "- Developing and optimizing full-stack applications to meet the evolving needs of the agency.",
