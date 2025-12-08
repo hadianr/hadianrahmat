@@ -9,6 +9,18 @@ I’m also a proud Google Cloud Professional Developer, always eager to explore 
 
   experience: [
     {
+      name: "Staffinc Group",
+      location: "Full Stack Engineer",
+      startDate: "Sep 2025",
+      endDate: "Dec 2025",
+      description: [
+        "As a Full Stack Engineer at Staffinc Group, I contribute to the development of innovative solutions that drive business success. Working in a hybrid environment in Jakarta, I leverage my expertise in both frontend and backend technologies to build scalable and user-centric applications.",
+        "- Developing full-stack applications that meet client requirements and business objectives.",
+        "- Collaborating with product and design teams to ensure seamless integration of features and optimal user experience.",
+        "- Implementing best practices in code quality, security, and performance optimization.",
+      ],  
+    },
+    {
       name: "Badan Kepagawaian Daerah Provinsi Jawa Barat",
       location: "Tenaga Ahli - Fullstack Engineer",
       startDate: "Oct 2024",
