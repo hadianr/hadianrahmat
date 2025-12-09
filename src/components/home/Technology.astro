@@ -1,0 +1,50 @@
+---
+import { info } from "@data";
+
+const formatText = (text: string) => {
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+};
+---
+
+<section class="my-16">
+  <h2 class="w-[15rem] dark:text-light mb-8">TECHNOLOGY & EXPERTISE</h2>
+  
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    {info.technologies.map((tech) => (
+      <div class="tech-category">
+        <h3 class="text-base font-bold dark:text-light mb-2">{tech.category}</h3>
+        <p class="text-xs dark:text-light italic opacity-70 mb-4">{tech.description}</p>
+
+        <div class="space-y-4">
+          {tech.subcategories.map((subcategory) => (
+            <div>
+              <h4 class="font-semibold dark:text-light mb-2 text-sm">
+                {subcategory.name}
+              </h4>
+
+              {subcategory.description && (
+                <p class="text-xs dark:text-light opacity-75 mb-2">
+                  {subcategory.description}
+                </p>
+              )}
+
+              <ul class="space-y-2">
+                {subcategory.items.map((item) => (
+                  <li class="dark:text-light text-xs">
+                    <div class="font-semibold text-xs">
+                      {item.name}
+                    </div>
+                    <div 
+                      class="text-xs dark:text-light opacity-85 mt-0.5"
+                      set:html={formatText(item.description)}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

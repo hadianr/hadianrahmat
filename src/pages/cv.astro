@@ -1,0 +1,76 @@
+---
+import { info } from "@data";
+import Layout from "@layouts/Layout.astro";
+import CVAtsPreview from "@components/general/CVAtsPreview.astro";
+import MetaHead from "@components/general/MetaHead.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <MetaHead
+      title={"CV - " + info.name}
+      description={"Download CV in ATS-friendly format"}
+      ogImageUrl={"/assets/images/profile.png"}
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <Layout>
+      <div class="flex justify-between items-center mb-8 mt-8">
+        <h1 class="text-4xl font-bold dark:text-light">My CV</h1>
+        <button
+          id="exportPdfBtn"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors dark:bg-blue-500 dark:hover:bg-blue-600"
+        >
+          📥 Export as PDF
+        </button>
+      </div>
+
+      <div class="mb-8 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg border border-blue-200 dark:border-blue-700">
+        <p class="text-sm text-blue-800 dark:text-blue-200">
+          💡 <strong>Tip:</strong> This CV is formatted as ATS-friendly (Applicant Tracking System).
+          It uses simple formatting to ensure compatibility with automated resume screening systems.
+        </p>
+      </div>
+
+      <CVAtsPreview />
+    </Layout>
+  </body>
+</html>
+
+<script is:inline>
+  const exportBtn = document.getElementById("exportPdfBtn");
+  
+  if (exportBtn) {
+    exportBtn.addEventListener("click", async () => {
+      try {
+        // Use the global html2pdf from CDN
+        const element = document.querySelector(".cv-ats");
+        if (!element) {
+          alert("CV not found");
+          return;
+        }
+
+        const options = {
+          margin: 0.5,
+          filename: "Hadian_Rahmat_CV.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        };
+
+        // Use global html2pdf from CDN script
+        if (typeof html2pdf !== "undefined") {
+          html2pdf().set(options).from(element).save();
+        } else {
+          alert("PDF library not loaded. Please refresh the page.");
+        }
+      } catch (error) {
+        console.error("Error exporting PDF:", error);
+        alert("Error exporting PDF. Please try again.");
+      }
+    });
+  }
+</script>

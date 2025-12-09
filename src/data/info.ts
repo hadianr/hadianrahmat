@@ -2,9 +2,11 @@ export const info = {
   baseUrl: "https://astro-portfolio-uzair.vercel.app",
   name: "Hadian Rahmat",
   jobDescription: "Engineering Manager",
-  about: `From writing my first lines of code to leading engineering teams, my journey in software development has been a continuous path of growth and discovery. Over the past 8 years, I’ve had the privilege to work across diverse roles—Fullstack Engineer, Backend Engineer, Chapter Lead Backend, and Engineering Manager—building applications that solve real problems and scaling systems that impact thousands of users.
-What excites me most is not just writing code, but also empowering people. I’ve led backend chapters, guided teams, and even stepped into the public sector for 9 months to contribute to digital transformation in government. Each role has strengthened my ability to balance technical depth with leadership and strategy.
-I’m also a proud Google Cloud Professional Developer, always eager to explore new technologies, and I find joy in sharing knowledge—whether through talks, mentoring, or engaging with the IT community. For me, technology is not just about systems, but also about the people who build and grow with it.
+  about: `From writing my first lines of code to leading engineering teams, my journey in software development has been a **continuous path of growth**. Over the past **8 years**, I've had the privilege to work across diverse roles—**Fullstack Engineer**, **Backend Engineer**, **Chapter Lead**, and **Engineering Manager**—building applications that solve real problems and scaling systems that impact thousands of users.
+
+In an evolving tech landscape, I combine **deep engineering fundamentals** with **modern AI-assisted workflows**. I leverage tools like **Copilot**, **Claude**, and **Gemini** to accelerate development cycles and enhance code review pipelines. However, I prioritize **validation over generation**; my experience allows me to rigorously architect and scrutinize AI outputs, ensuring **robust and scalable solutions** rather than falling into the trap of '**vibe coding**' without substance.
+
+What excites me most is **empowering people**. I've led backend chapters, guided teams, and stepped into the public sector to contribute to **digital transformation in government**. Each role has strengthened my ability to **balance technical strategy with leadership**. As a **Google Cloud Professional Developer** and active community organizer, I find joy in **sharing knowledge**—proving that technology is not just about systems, but about the people who build and grow with it.
   `,
 
   experience: [
@@ -159,4 +161,153 @@ I’m also a proud Google Cloud Professional Developer, always eager to explore 
       liveUrl: "https://google.com",
     },
   ],
+
+  technologies: [
+    {
+      category: "Core Engineering & Backend Ecosystem",
+      description: "Focused on choosing the right tool for the job—from enterprise-grade PHP to high-performance Go and modern JavaScript runtimes.",
+      subcategories: [
+        {
+          name: "Languages & Runtimes",
+          items: [
+            {
+              name: "PHP",
+              description: "**Laravel**, Codeigniter, Lumen.",
+              skills: ["Laravel", "Codeigniter", "Lumen"],
+            },
+            {
+              name: "Go (Golang)",
+              description: "High-concurrency microservices.",
+              skills: ["Microservices", "Concurrency"],
+            },
+            {
+              name: "Node.js & Modern Runtimes",
+              description: "**Express.js**, **AdonisJS**, **Bun** with **ElysiaJS**.",
+              skills: ["Express.js", "AdonisJS", "Bun", "ElysiaJS"],
+            },
+          ],
+        },
+        {
+          name: "Architecture & Data",
+          items: [
+            {
+              name: "Architectural Patterns",
+              description: "**Microservices**, **RESTful APIs**, Monolithic Migration.",
+              skills: ["Microservices", "RESTful APIs", "Monolithic Migration"],
+            },
+            {
+              name: "Databases",
+              description: "**MySQL**, **PostgreSQL**, **Redis**.",
+              skills: ["MySQL", "PostgreSQL", "Redis"],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      category: "Cloud Infrastructure & DevOps",
+      description: "Cloud-agnostic capability with a stronghold in Google Cloud.",
+      subcategories: [
+        {
+          name: "Cloud Platforms",
+          items: [
+            {
+              name: "Multi-Cloud Expertise",
+              description: "**Google Cloud Platform (GCP)** - Certified Professional Developer. **AWS** and **Microsoft Azure** - practical implementations.",
+              skills: ["GCP", "AWS", "Microsoft Azure"],
+            },
+          ],
+        },
+        {
+          name: "DevOps & CI/CD",
+          items: [
+            {
+              name: "Containerization",
+              description: "**Docker** & **Kubernetes (GKE)**.",
+              skills: ["Docker", "Kubernetes", "GKE"],
+            },
+            {
+              name: "Pipelines",
+              description: "**Jenkins**, **Github Actions**, **GitLab CI**.",
+              skills: ["Jenkins", "Github Actions", "GitLab CI"],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      category: "AI-Augmented Workflow",
+      description: "Orchestrating the best AI models to accelerate architectural logic and code quality.",
+      subcategories: [
+        {
+          name: "Multi-Model Approach",
+          description: "Selecting specific LLMs based on their strengths:",
+          items: [
+            {
+              name: "Claude",
+              description: "Complex system architecture, deep reasoning, refactoring.",
+              skills: ["Architecture", "Reasoning", "Refactoring"],
+            },
+            {
+              name: "GPT Family",
+              description: "Rapid prototyping and boilerplate generation.",
+              skills: ["Prototyping", "Boilerplate"],
+            },
+            {
+              name: "Gemini",
+              description: "Google ecosystem integration and large context analysis.",
+              skills: ["Google Integration", "Context Analysis"],
+            },
+          ],
+        },
+        {
+          name: "AI Tools",
+          items: [
+            {
+              name: "Development Tools",
+              description: "**Github Copilot**, **Cursor**, **Gemini Code Assist**.",
+              skills: ["Github Copilot", "Cursor", "Gemini Code Assist"],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      category: "Engineering Leadership",
+      description: "Bridging technical execution and business goals through strategic management.",
+      subcategories: [
+        {
+          name: "Leadership Dimensions",
+          items: [
+            {
+              name: "Strategic Leadership",
+              description: "Cross-functional teams, technical roadmaps, backend chapter management.",
+              skills: ["Teams", "Roadmaps", "Chapter Lead"],
+            },
+            {
+              name: "People Growth & Mentorship",
+              description: "Active coaching, mentorship, continuous learning culture.",
+              skills: ["Coaching", "Mentorship", "Learning"],
+            },
+            {
+              name: "Operational Excellence",
+              description: "**Agile/Scrum**, Sprint Planning, **OKRs/KPIs**.",
+              skills: ["Agile", "Scrum", "OKRs", "KPIs"],
+            },
+            {
+              name: "Stakeholder Management",
+              description: "Product and C-Level collaboration, business translation.",
+              skills: ["Collaboration", "Strategy"],
+            },
+            {
+              name: "Talent Acquisition",
+              description: "End-to-end hiring for high-performing, resilient teams.",
+              skills: ["Hiring", "Team Building"],
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
+

@@ -2,12 +2,35 @@
 import { IHeroProps } from "@types";
 
 const { name, about } = Astro.props as IHeroProps;
+
+// Helper function to convert markdown bold to HTML and handle line breaks
+const formatText = (text: string) => {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .split('\n')
+    .filter((line: string) => line.trim() !== '')
+    .map((line: string) => `<p>${line}</p>`)
+    .join('');
+};
 ---
 
 <section>
-  <p class="dark:text-light mt-[32px]">Hey, I’m</p>
+  <p class="dark:text-light mt-[32px]">Hey, I'm</p>
   <h1>{name}</h1>
-  <p class="dark:text-light text-lg mb-16">
-    {about}
-  </p>
+  <div class="text-lg mb-16 space-y-4 dark:text-light about-content">
+    <Fragment set:html={formatText(about)} />
+  </div>
 </section>
+
+<style>
+  .about-content :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: inherit;
+  }
+  
+  .about-content :global(strong) {
+    font-weight: 600;
+    color: inherit;
+  }
+</style>
