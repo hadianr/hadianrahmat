@@ -18,20 +18,46 @@ import MetaHead from "@components/general/MetaHead.astro";
 
   <body>
     <Layout>
-      <div class="flex justify-between items-center mb-8 mt-8">
-        <h1 class="text-4xl font-bold dark:text-light">My CV</h1>
-        <button
-          id="exportPdfBtn"
-          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors dark:bg-blue-500 dark:hover:bg-blue-600"
-        >
-          📥 Export as PDF
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 mt-8">
+        <div>
+          <h1 class="text-4xl font-bold dark:text-light mb-2">My CV</h1>
+          <p class="text-sm text-gray-600 dark:text-gray-400">ATS-friendly format ready for download</p>
+        </div>
+        
+        <!-- Enhanced Download Button -->
+        <button id="exportPdfBtn">
+          <!-- Download Icon SVG -->
+          <svg 
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          <span>Download PDF</span>
+          <!-- Loading Spinner (hidden by default) -->
+          <svg 
+            id="loadingSpinner"
+            style="display: none;"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
+            <path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
         </button>
       </div>
 
-      <div class="mb-8 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg border border-blue-200 dark:border-blue-700">
-        <p class="text-sm text-blue-800 dark:text-blue-200">
-          💡 <strong>Tip:</strong> This CV is formatted as ATS-friendly (Applicant Tracking System).
-          It uses simple formatting to ensure compatibility with automated resume screening systems.
+      <div id="tipBox" class="mb-8 p-4 bg-blue-50 dark:bg-blue-500/20 rounded-lg border-2 border-blue-200 dark:border-blue-400">
+        <p id="tipText" class="text-sm" style="color: rgb(30, 58, 138);">
+          💡 <strong id="tipLabel" style="color: rgb(30, 58, 138);">Tip:</strong> <span id="tipDesc" style="color: rgb(30, 58, 138);">This CV is formatted as ATS-friendly (Applicant Tracking System).
+          It uses simple formatting to ensure compatibility with automated resume screening systems.</span>
         </p>
       </div>
 
@@ -40,12 +66,112 @@ import MetaHead from "@components/general/MetaHead.astro";
   </body>
 </html>
 
+<style>
+  /* Button styles that respect dark mode */
+  #exportPdfBtn {
+    background: #2563eb !important;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) !important;
+    transition: all 0.3s !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+
+  #exportPdfBtn:hover {
+    background: #1d4ed8 !important;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1) !important;
+  }
+
+  /* Dark mode adjustments */
+  :global(.dark) #exportPdfBtn {
+    background: #3b82f6 !important;
+  }
+
+  :global(.dark) #exportPdfBtn:hover {
+    background: #2563eb !important;
+  }
+
+  #exportPdfBtn span,
+  #exportPdfBtn svg {
+    color: white !important;
+    stroke: white !important;
+    fill: none !important;
+  }
+
+  /* Tip box styling */
+  #tipText, #tipLabel {
+    color: rgb(30, 58, 138) !important;
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    #tipText, #tipLabel {
+      color: white !important;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Force set tip text color for dark mode
+  function updateTipColors() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const tipText = document.getElementById('tipText');
+    const tipLabel = document.getElementById('tipLabel');
+    const tipDesc = document.getElementById('tipDesc');
+    
+    if (isDark) {
+      if (tipText) tipText.style.color = 'white !important';
+      if (tipLabel) tipLabel.style.color = 'white !important';
+      if (tipDesc) tipDesc.style.color = 'white !important';
+      // Also update all children
+      const allElements = document.getElementById('tipBox').querySelectorAll('*');
+      allElements.forEach(el => {
+        if (el.textContent && el.textContent.includes('Tip') || el.textContent.includes('ATS')) {
+          el.style.color = 'white !important';
+        }
+      });
+    } else {
+      if (tipText) tipText.style.color = 'rgb(30, 58, 138)';
+      if (tipLabel) tipLabel.style.color = 'rgb(30, 58, 138)';
+      if (tipDesc) tipDesc.style.color = 'rgb(30, 58, 138)';
+    }
+  }
+  
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', updateTipColors);
+  
+  // Run immediately in case DOM is already loaded
+  updateTipColors();
+  
+  // Listen for theme changes
+  const observer = new MutationObserver(updateTipColors);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script>
+
 <script is:inline>
   const exportBtn = document.getElementById("exportPdfBtn");
+  const loadingSpinner = document.getElementById("loadingSpinner");
+  const downloadIcon = exportBtn?.querySelector("svg:first-of-type");
+  const buttonText = exportBtn?.querySelector("span");
   
   if (exportBtn) {
     exportBtn.addEventListener("click", async () => {
       try {
+        // Show loading state
+        if (loadingSpinner && downloadIcon && buttonText) {
+          downloadIcon.classList.add("hidden");
+          loadingSpinner.classList.remove("hidden");
+          buttonText.textContent = "Generating PDF...";
+          exportBtn.disabled = true;
+          exportBtn.classList.add("opacity-75", "cursor-wait");
+        }
+
         // Use the global html2pdf from CDN
         const element = document.querySelector(".cv-ats");
         if (!element) {
@@ -77,13 +203,41 @@ import MetaHead from "@components/general/MetaHead.astro";
 
         // Use global html2pdf from CDN script
         if (typeof html2pdf !== "undefined") {
-          html2pdf().set(options).from(element).save();
+          await html2pdf().set(options).from(element).save();
+          
+          // Reset button state after successful download
+          setTimeout(() => {
+            if (loadingSpinner && downloadIcon && buttonText) {
+              loadingSpinner.classList.add("hidden");
+              downloadIcon.classList.remove("hidden");
+              buttonText.textContent = "Download PDF";
+              exportBtn.disabled = false;
+              exportBtn.classList.remove("opacity-75", "cursor-wait");
+            }
+          }, 1000);
         } else {
           alert("PDF library not loaded. Please refresh the page.");
+          // Reset on error
+          if (loadingSpinner && downloadIcon && buttonText) {
+            loadingSpinner.classList.add("hidden");
+            downloadIcon.classList.remove("hidden");
+            buttonText.textContent = "Download PDF";
+            exportBtn.disabled = false;
+            exportBtn.classList.remove("opacity-75", "cursor-wait");
+          }
         }
       } catch (error) {
         console.error("Error exporting PDF:", error);
         alert("Error exporting PDF. Please try again.");
+        
+        // Reset button state on error
+        if (loadingSpinner && downloadIcon && buttonText) {
+          loadingSpinner.classList.add("hidden");
+          downloadIcon.classList.remove("hidden");
+          buttonText.textContent = "Download PDF";
+          exportBtn.disabled = false;
+          exportBtn.classList.remove("opacity-75", "cursor-wait");
+        }
       }
     });
   }
