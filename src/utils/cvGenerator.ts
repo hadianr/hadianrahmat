@@ -105,6 +105,16 @@ export const generateCVATS = () => {
           font-size: 11pt;
           margin-bottom: 2pt;
         }
+
+        .pill {
+          display: inline-block;
+          margin-left: 6pt;
+          padding: 2pt 6pt;
+          border-radius: 10pt;
+          border: 1pt solid #999;
+          font-size: 8pt;
+          background: #f2f2f2;
+        }
         
         .date-range {
           font-size: 10pt;
@@ -173,7 +183,11 @@ export const generateCVATS = () => {
                 <div class="position-title">${exp.location}</div>
                 <div class="date-range">${formatDate(exp.startDate)} - ${formatDate(exp.endDate)}</div>
               </div>
-              <div class="company-name">${exp.name}</div>
+              <div class="company-name">
+                ${exp.name}
+                ${exp.employmentType ? `<span class="pill">${exp.employmentType}</span>` : ""}
+              </div>
+              ${exp.city ? `<div class="location">${exp.city}</div>` : ""}
               <div class="description">
                 ${exp.description
                   .map((desc) => {

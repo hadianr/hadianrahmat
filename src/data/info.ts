@@ -18,6 +18,8 @@ What excites me most is impact through people and systems. I lead with technical
       location: "Full Stack Engineer",
       startDate: "Sep 2025",
       endDate: "Dec 2025",
+      employmentType: "Freelance / Contract",
+      city: "Jakarta, Indonesia",
       description: [
         "As a Full Stack Engineer at Staffinc Group, I contribute to the development of innovative solutions that drive business success. Working in a hybrid environment in Jakarta, I leverage my expertise in both frontend and backend technologies to build scalable and user-centric applications.",
         "- Developing full-stack applications that meet client requirements and business objectives.",
@@ -30,6 +32,8 @@ What excites me most is impact through people and systems. I lead with technical
       location: "Tenaga Ahli - Fullstack Engineer",
       startDate: "Oct 2024",
       endDate: "Jun 2025",
+      employmentType: "Full-time",
+      city: "Bandung, Indonesia",
       description: [
         "As a Fullstack Engineer, I leverage my extensive experience in software development to drive digital transformation within the public sector. I am instrumental in designing, developing, and maintaining critical applications that streamline civil service processes, enhancing efficiency and accessibility for thousands of employees across the region.",
         "- Developing and optimizing full-stack applications to meet the evolving needs of the agency.",
@@ -42,6 +46,8 @@ What excites me most is impact through people and systems. I lead with technical
       location: "Engineering Manager",
       startDate: "Sep 2022",
       endDate: "Sep 2024",
+      employmentType: "Full-time",
+      city: "Bandung, Indonesia",
       description: [
         "I lead a team of talented software engineers to develop and maintain high-quality products. With experience in the tech industry, I have a proven track record of delivering successful projects on time and within budget. In my current role, I prioritize collaboration and clear communication to ensure that my team has the support and resources they need to do their best work. I also stay up-to-date on industry best practices and emerging technologies to ensure that we are using the right tools and approaches to meet the evolving needs of our customers.",
         "- Improving team productivity, efficiency, and collaboration leading to faster project delivery and higher-quality outcomes.",
@@ -57,6 +63,8 @@ What excites me most is impact through people and systems. I lead with technical
       location: "Chapter Lead Backend",
       startDate: "Mar 2021",
       endDate: "Sep 2022",
+      employmentType: "Full-time",
+      city: "Bandung, Indonesia",
       description: [
         "I manage a team of experienced software engineers who develop and maintain the server-side of our products. I am skilled in leading cross-functional teams and implementing best practices to ensure the success of our projects. In my current role, I work closely with the product and design teams to deliver scalable and reliable backend solutions that meet the needs of our customers. I also mentor and provide guidance to my team members to help them grow and succeed in their careers.",
         "- Team Growth and Development: Successfully mentoring junior engineers, fostering their technical growth, and helping them advance their careers within the organization.",
@@ -71,6 +79,8 @@ What excites me most is impact through people and systems. I lead with technical
       location: "Backend Engineer",
       startDate: "Jun 2018",
       endDate: "Mar 2021",
+      employmentType: "Full-time",
+      city: "Bandung, Indonesia",
       description: [
         "I am responsible for developing and maintaining the server-side of our products. In my current role, I work closely with the rest of the engineering team to design and implement scalable, efficient, and reliable backend solutions. I also stay up-to-date on the latest industry best practices and technologies to ensure that we are using the right tools to meet the evolving needs of our customers.",
         "- Scalable Architecture: Designing and implementing scalable backend architectures that accommodate rapid user growth and ensure high performance under heavy loads. ",
@@ -89,6 +99,8 @@ What excites me most is impact through people and systems. I lead with technical
       location: "Web Developer",
       startDate: "Aug 2017",
       endDate: "Jun 2018",
+      employmentType: "Full-time",
+      city: "Bandung, Indonesia",
       description: [
         "I am a Full-Stack Developer with a comprehensive skill set spanning both front-end and back-end development. I have experience in designing and developing complete web applications from the ground up. My expertise includes Laravel and Codeigniter. I am passionate about creating innovative and efficient web solutions.",
       ],

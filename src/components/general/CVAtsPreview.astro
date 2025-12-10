@@ -93,7 +93,15 @@ const formatDate = (date: string): string => {
             {formatDate(exp.startDate)} - {formatDate(exp.endDate)}
           </span>
         </div>
-        <p class="font-semibold text-sm mb-2">{exp.name}</p>
+        <div class="flex items-center gap-2 mb-2">
+          <p class="font-semibold text-sm">{exp.name}</p>
+          {exp.employmentType && (
+            <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold border border-gray-300">
+              {exp.employmentType}
+            </span>
+          )}
+        </div>
+        {exp.city && <p class="text-xs text-gray-700 mb-2">{exp.city}</p>}
         <div class="text-sm">
           {exp.description.map((desc) => (
             <>
