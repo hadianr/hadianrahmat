@@ -125,10 +125,34 @@ const formatDate = (date: string): string => {
     line-height: 1.4;
   }
 
+  /* Prevent page breaks inside sections */
+  .cv-ats section {
+    page-break-inside: avoid;
+  }
+
+  /* Prevent orphaned headers */
+  .cv-ats h2, .cv-ats h3 {
+    page-break-after: avoid;
+  }
+
+  /* Keep experience entries together */
+  .cv-ats .mb-4 {
+    page-break-inside: avoid;
+  }
+
   @media print {
     .cv-ats {
       padding: 0;
       margin: 0;
+    }
+    
+    /* Better page break control for print */
+    section {
+      page-break-inside: avoid;
+    }
+    
+    h2, h3 {
+      page-break-after: avoid;
     }
   }
 </style>

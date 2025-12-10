@@ -54,11 +54,25 @@ import MetaHead from "@components/general/MetaHead.astro";
         }
 
         const options = {
-          margin: 0.5,
+          margin: [0.5, 0.5, 0.5, 0.5],
           filename: "Hadian_Rahmat_CV.pdf",
           image: { type: "jpeg", quality: 0.98 },
-          html2canvas: { scale: 2 },
-          jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+          html2canvas: { 
+            scale: 2,
+            useCORS: true,
+            letterRendering: true
+          },
+          jsPDF: { 
+            unit: "in", 
+            format: "letter", 
+            orientation: "portrait" 
+          },
+          pagebreak: { 
+            mode: ['avoid-all', 'css', 'legacy'],
+            before: '.page-break-before',
+            after: '.page-break-after',
+            avoid: ['h2', 'h3']
+          }
         };
 
         // Use global html2pdf from CDN script
