@@ -14,8 +14,8 @@ What excites me most is impact through people and systems. I lead with technical
 
   experience: [
     {
-      name: "Staffinc Group",
-      location: "Full Stack Engineer",
+      company: "Staffinc Group",
+      role: "Full Stack Engineer",
       startDate: "Sep 2025",
       endDate: "Dec 2025",
       employmentType: "Freelance / Contract",
@@ -28,8 +28,8 @@ What excites me most is impact through people and systems. I lead with technical
       ],  
     },
     {
-      name: "Badan Kepagawaian Daerah Provinsi Jawa Barat",
-      location: "Tenaga Ahli - Fullstack Engineer",
+      company: "Badan Kepagawaian Daerah Provinsi Jawa Barat",
+      role: "Tenaga Ahli - Fullstack Engineer",
       startDate: "Oct 2024",
       endDate: "Jun 2025",
       employmentType: "Full-time",
@@ -42,8 +42,8 @@ What excites me most is impact through people and systems. I lead with technical
       ],  
     },
     {
-      name: "GITS Indonesia",
-      location: "Engineering Manager",
+      company: "GITS Indonesia",
+      role: "Engineering Manager",
       startDate: "Sep 2022",
       endDate: "Sep 2024",
       employmentType: "Full-time",
@@ -59,8 +59,8 @@ What excites me most is impact through people and systems. I lead with technical
     },
 
     {
-      name: "",
-      location: "Chapter Lead Backend",
+      company: "GITS Indonesia",
+      role: "Chapter Lead Backend",
       startDate: "Mar 2021",
       endDate: "Sep 2022",
       employmentType: "Full-time",
@@ -75,8 +75,8 @@ What excites me most is impact through people and systems. I lead with technical
     },
 
     {
-      name: "",
-      location: "Backend Engineer",
+      company: "GITS Indonesia",
+      role: "Backend Engineer",
       startDate: "Jun 2018",
       endDate: "Mar 2021",
       employmentType: "Full-time",
@@ -95,8 +95,8 @@ What excites me most is impact through people and systems. I lead with technical
     },
 
     {
-      name: "PT Jaya Data Informatika",
-      location: "Web Developer",
+      company: "PT Jaya Data Informatika",
+      role: "Web Developer",
       startDate: "Aug 2017",
       endDate: "Jun 2018",
       employmentType: "Full-time",
