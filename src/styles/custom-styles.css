@@ -32,3 +32,28 @@
     background-position: 0% 50%;
   }
 }
+
+/* Dark theme global text colors */
+.dark p,
+.dark li,
+.dark span {
+  color: #d1d5db;
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+  color: #f3f4f6;
+}
+
+.dark strong {
+  color: #e5e7eb;
+}
+
+.dark a {
+  color: #9ca3af;
+}
+
+.dark a:hover {
+  color: #d1d5db;
+}

@@ -3,23 +3,31 @@ import { IExperiences } from "@types";
 
 const { title, details } = Astro.props as IExperiences;
 
-// Function to bold keywords in text
-const boldKeywords = (text: string) => {
-  // Pattern untuk kata-kata kunci yang ingin di-bold (diawali dengan huruf kapital atau keyword tertentu)
-  const keywordPattern = /([A-Z][a-zA-Z\s]+(?:\s[A-Z][a-zA-Z\s]+)*|(?:CI\/CD|DevOps|OKRs?|KPIs?))/g;
-  const parts = text.split(keywordPattern);
-  
-  return parts.map((part, idx) => {
-    if (part && keywordPattern.test(part)) {
-      return `<strong>${part}</strong>`;
+// Function to bold keywords in text - more selective approach
+const boldKeywords = (text: string, isBullet: boolean = false) => {
+  if (isBullet) {
+    // For bullet points with colon: bold everything before the colon
+    if (text.includes(':')) {
+      const colonIndex = text.indexOf(':');
+      const beforeColon = text.substring(0, colonIndex).trim();
+      const afterColon = text.substring(colonIndex + 1).trim();
+      return `<strong>${beforeColon}:</strong> ${afterColon}`;
     }
-    return part;
-  }).join('');
+    
+    // For bullet points without colon: bold specific important keywords
+    const importantKeywords = /\b(Developing|Implementing|Leading|Collaborating|Architecting|Designing|Building|Creating|Managing|Optimizing|Enhancing|Maintaining|Ensuring|Leveraging|Utilizing|Establishing|Promoting)\b/g;
+    return text.replace(importantKeywords, '<strong>$1</strong>');
+  }
+  
+  // For paragraphs: only bold specific technical terms and important keywords
+  const technicalTerms = /\b(Go|Node\.js|PHP|Laravel|Docker|Kubernetes|GKE|CI\/CD|DevOps|OKRs?|KPIs?|Agile|Scrum|Google Cloud|GCP|AWS|Azure|TypeScript|JavaScript|React|Vue|Angular|PostgreSQL|MySQL|Redis|GraphQL|REST|API|Microservices)\b/g;
+  
+  return text.replace(technicalTerms, '<strong>$1</strong>');
 };
 ---
 
 <section
-  class="flex items-start justify-between flex-col sm:flex-row dark:text-light"
+  class="flex items-start justify-between flex-col sm:flex-row"
 >
   <h2 class="w-[15rem] mt-16">{title}</h2>
   <div class="w-full">
@@ -31,7 +39,7 @@ const boldKeywords = (text: string) => {
           </div>
           <div class="flex justify-between items-center flex-wrap">
             <h3 class="text-l font-semibold text-blue">{item.location}</h3>
-            <p class="text-sm dark:text-gray flex items-center gap-2">
+            <p class="text-sm flex items-center gap-2">
               <span>
                 {item.startDate} - {item.endDate}
               </span>
@@ -43,24 +51,24 @@ const boldKeywords = (text: string) => {
             </p>
           </div>
           {item.city && (
-            <p class="text-sm text-gray-600 dark:text-gray mt-1">{item.city}</p>
+            <p class="text-sm text-gray-600 mt-1">{item.city}</p>
           )}
           <div class="mt-3 space-y-3">
             {item.description
               .filter((desc) => !desc.trim().startsWith("-"))
               .map((paragraph) => (
-                <p class="text-base text-dark-gray dark:text-gray leading-relaxed">
-                  <Fragment set:html={boldKeywords(paragraph)} />
+                <p class="text-base leading-relaxed">
+                  <Fragment set:html={boldKeywords(paragraph, false)} />
                 </p>
               ))}
 
             {item.description.some((desc) => desc.trim().startsWith("-")) && (
-              <ul class="list-none pl-5 space-y-2 text-dark-gray dark:text-gray">
+              <ul class="list-none pl-5 space-y-2">
                 {item.description
                   .filter((desc) => desc.trim().startsWith("-"))
                   .map((bullet) => (
-                    <li class="text-dark-gray dark:text-gray before:content-['•'] before:mr-2 before:text-dark-gray dark:before:text-gray">
-                      <Fragment set:html={boldKeywords(bullet.replace(/^[-\s]+/, "").trim())} />
+                    <li class="before:content-['•'] before:mr-2">
+                      <Fragment set:html={boldKeywords(bullet.replace(/^[-\s]+/, "").trim(), true)} />
                     </li>
                   ))}
               </ul>
@@ -73,13 +81,9 @@ const boldKeywords = (text: string) => {
 </section>
 
 <style>
-  /* Custom bullet styling */
-  li.before\:content-\[\'\•\'\]::before {
-    color: #1a1a1a;
-  }
-
-  :global(.dark) li.before\:content-\[\'\•\'\]::before {
-    color: #c4c4c4;
+  /* Bullet point color - inherit from parent text color */
+  li::before {
+    color: inherit;
   }
 
   /* Bold keyword styling */

@@ -15,9 +15,9 @@ const formatText = (text: string) => {
 ---
 
 <section>
-  <p class="dark:text-light mt-[32px]">Hey, I'm</p>
+  <p class="mt-[32px]">Hey, I'm</p>
   <h1>{name}</h1>
-  <div class="text-lg mb-16 space-y-4 dark:text-light about-content">
+  <div class="text-lg mb-16 space-y-4 about-content">
     <Fragment set:html={formatText(about)} />
   </div>
 </section>

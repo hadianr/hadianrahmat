@@ -11,7 +11,7 @@
 /* ========== tailwind custom styles ========== */
 @layer components {
   body {
-    @apply bg-light dark:bg-dark;
+    @apply bg-light dark:bg-dark text-dark-gray dark:text-gray;
   }
   .container {
     @apply max-w-[1112px] mx-auto px-4;
@@ -33,7 +33,7 @@
   p,
   li,
   a {
-    @apply font-inter text-dark-gray;
+    @apply font-inter;
   }
   .footer-icons {
     @apply dark:text-light flex items-center border border-dark dark:border-light p-4 rounded-lg justify-center;
