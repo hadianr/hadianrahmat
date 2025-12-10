@@ -2,6 +2,9 @@ export const info = {
   baseUrl: "https://astro-portfolio-uzair.vercel.app",
   name: "Hadian Rahmat",
   jobDescription: "Full Stack Engineer | Tech Leader",
+  location: "Bandung, West Java, Indonesia",
+  website: "hadianrahmat.com",
+  cvSummary: "Full-Stack Engineer and Technical Leader with 8+ years building scalable systems and leading high-performing teams. Backend expertise in Go, Node.js, and PHP with full-stack capabilities including modern frontends and DevOps. Leverage AI-augmented development practices (Claude, ChatGPT, Gemini) to accelerate architecture exploration and code review—judgment-first approach. Proven track record in digital transformation, system architecture, and engineering team management. Certified Google Cloud Professional Developer.",
   about: `Over 8 years, I've learned that great engineering is about **building systems that survive chaos, leading teams that solve hard problems, and making decisions rooted in judgment**. I'm a backend engineer at heart—architecting cloud-native systems in Go, Node.js, and PHP that handle millions of users. I've optimized databases that shaved seconds off response times, designed microservices that let teams move independently, and built APIs that scale. But I'm equally comfortable shipping complete solutions—writing responsive frontends, orchestrating DevOps, ensuring every piece works seamlessly. My foundation is backend depth; my flexibility is full-stack breadth.
 
 In an evolving tech landscape, I practice **AI-augmented development**. I leverage Claude, ChatGPT, and Gemini as thinking partners—exploring architecture faster, reviewing code more thoroughly, prototyping ideas in minutes. But I remain the architect. I validate rigorously, question critically, and ship nothing that doesn't meet my standards. It's judgment-first, AI-enhanced—not the other way around.
