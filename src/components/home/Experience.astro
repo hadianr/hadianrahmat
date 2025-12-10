@@ -2,6 +2,20 @@
 import { IExperiences } from "@types";
 
 const { title, details } = Astro.props as IExperiences;
+
+// Function to bold keywords in text
+const boldKeywords = (text: string) => {
+  // Pattern untuk kata-kata kunci yang ingin di-bold (diawali dengan huruf kapital atau keyword tertentu)
+  const keywordPattern = /([A-Z][a-zA-Z\s]+(?:\s[A-Z][a-zA-Z\s]+)*|(?:CI\/CD|DevOps|OKRs?|KPIs?))/g;
+  const parts = text.split(keywordPattern);
+  
+  return parts.map((part, idx) => {
+    if (part && keywordPattern.test(part)) {
+      return `<strong>${part}</strong>`;
+    }
+    return part;
+  }).join('');
+};
 ---
 
 <section
@@ -31,13 +45,45 @@ const { title, details } = Astro.props as IExperiences;
           {item.city && (
             <p class="text-sm text-gray-600 dark:text-gray mt-1">{item.city}</p>
           )}
-          <ul class="mt-3">
-            {item.description.map((item) => (
-              <li class="dark:text-gray">{item}</li>
-            ))}
-          </ul>
+          <div class="mt-3 space-y-3">
+            {item.description
+              .filter((desc) => !desc.trim().startsWith("-"))
+              .map((paragraph) => (
+                <p class="text-base text-dark-gray dark:text-gray leading-relaxed">
+                  <Fragment set:html={boldKeywords(paragraph)} />
+                </p>
+              ))}
+
+            {item.description.some((desc) => desc.trim().startsWith("-")) && (
+              <ul class="list-none pl-5 space-y-2 text-dark-gray dark:text-gray">
+                {item.description
+                  .filter((desc) => desc.trim().startsWith("-"))
+                  .map((bullet) => (
+                    <li class="text-dark-gray dark:text-gray before:content-['•'] before:mr-2 before:text-dark-gray dark:before:text-gray">
+                      <Fragment set:html={boldKeywords(bullet.replace(/^[-\s]+/, "").trim())} />
+                    </li>
+                  ))}
+              </ul>
+            )}
+          </div>
         </div>
       ))
     }
   </div>
 </section>
+
+<style>
+  /* Custom bullet styling */
+  li.before\:content-\[\'\•\'\]::before {
+    color: #1a1a1a;
+  }
+
+  :global(.dark) li.before\:content-\[\'\•\'\]::before {
+    color: #c4c4c4;
+  }
+
+  /* Bold keyword styling */
+  strong {
+    font-weight: 600;
+  }
+</style>

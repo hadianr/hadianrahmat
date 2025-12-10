@@ -7,7 +7,8 @@ module.exports = {
       colors: {
         dark: "#111111",
         light: "#FFFFFF",
-        blue: "#33d2ff",
+        // Deeper blue for better contrast on light theme
+        blue: "#0f6fa3",
         gray: "#C4C4C4",
         "dark-gray": "#1A1A1A",
       },
