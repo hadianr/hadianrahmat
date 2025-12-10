@@ -7,37 +7,65 @@ const formatText = (text: string) => {
 ---
 
 <section class="my-16">
-  <h2 class="w-[15rem] dark:text-light mb-8">TECHNOLOGY & EXPERTISE</h2>
+  <!-- Centered Title -->
+  <div class="text-center mb-12">
+    <h2 class="text-2xl md:text-3xl font-bold dark:text-light mb-3">
+      TECHNOLOGY & EXPERTISE
+    </h2>
+    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500 mx-auto rounded-full"></div>
+  </div>
   
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-    {info.technologies.map((tech) => (
-      <div class="tech-category">
-        <h3 class="text-base font-bold dark:text-light mb-2">{tech.category}</h3>
-        <p class="text-xs dark:text-light italic opacity-70 mb-4">{tech.description}</p>
+  <!-- Technology Grid with Enhanced Cards -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    {info.technologies.map((tech, idx) => (
+      <div 
+        class="tech-category group bg-white dark:bg-gray-800/50 rounded-xl p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+        style={`animation-delay: ${idx * 100}ms`}
+      >
+        <!-- Category Header -->
+        <div class="mb-5 pb-4 border-b-2 border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg font-bold dark:text-light mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            {tech.category}
+          </h3>
+          <p class="text-sm dark:text-light opacity-75 leading-relaxed" set:html={formatText(tech.description)} />
+        </div>
 
-        <div class="space-y-4">
+        <!-- Subcategories -->
+        <div class="space-y-5">
           {tech.subcategories.map((subcategory) => (
-            <div>
-              <h4 class="font-semibold dark:text-light mb-2 text-sm">
+            <div class="subcategory-section">
+              <h4 class="font-semibold dark:text-light mb-3 text-sm flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-blue-500 dark:bg-blue-400 rounded-full"></span>
                 {subcategory.name}
               </h4>
 
               {subcategory.description && (
-                <p class="text-xs dark:text-light opacity-75 mb-2">
+                <p class="text-xs dark:text-light opacity-75 mb-3 pl-3.5 italic">
                   {subcategory.description}
                 </p>
               )}
 
-              <ul class="space-y-2">
+              <!-- Items List -->
+              <ul class="space-y-3 pl-3.5">
                 {subcategory.items.map((item) => (
-                  <li class="dark:text-light text-xs">
-                    <div class="font-semibold text-xs">
+                  <li class="dark:text-light text-sm">
+                    <div class="font-semibold text-sm mb-1 text-gray-900 dark:text-gray-100">
                       {item.name}
                     </div>
                     <div 
-                      class="text-xs dark:text-light opacity-85 mt-0.5"
+                      class="text-xs dark:text-light opacity-80 leading-relaxed mb-2"
                       set:html={formatText(item.description)}
                     />
+                    {/* Skills Tags */}
+                    {item.skills && item.skills.length > 0 && (
+                      <div class="flex flex-wrap gap-1.5 mt-2">
+                        {item.skills.map((skill) => (
+                          <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -48,3 +76,26 @@ const formatText = (text: string) => {
     ))}
   </div>
 </section>
+
+<style>
+  .tech-category {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth transitions for all interactive elements */
+  .tech-category * {
+    transition: all 0.2s ease;
+  }
+</style>

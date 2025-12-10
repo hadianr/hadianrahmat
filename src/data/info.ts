@@ -168,24 +168,24 @@ What excites me most is impact through people and systems. I lead with technical
   technologies: [
     {
       category: "Core Engineering & Backend Ecosystem",
-      description: "Focused on choosing the right tool for the job—from enterprise-grade PHP to high-performance Go and modern JavaScript runtimes.",
+      description: "My foundation. I've built systems that handle millions of users, optimized databases that shaved seconds off queries, and designed APIs that teams love to integrate with.",
       subcategories: [
         {
           name: "Languages & Runtimes",
           items: [
             {
               name: "PHP",
-              description: "**Laravel**, Codeigniter, Lumen.",
+              description: "Where I started and still deliver. **Laravel** for rapid enterprise applications, **Lumen** for lightweight APIs that fly, **Codeigniter** for maintaining legacy systems that power real businesses.",
               skills: ["Laravel", "Codeigniter", "Lumen"],
             },
             {
               name: "Go (Golang)",
-              description: "High-concurrency microservices.",
-              skills: ["Microservices", "Concurrency"],
+              description: "For when performance is non-negotiable. I build high-concurrency microservices that process millions of requests, handle distributed workloads, and scale horizontally without breaking a sweat.",
+              skills: ["Microservices", "Concurrency", "High Performance"],
             },
             {
               name: "Node.js & Modern Runtimes",
-              description: "**Express.js**, **AdonisJS**, **Bun** with **ElysiaJS**.",
+              description: "The JavaScript ecosystem at scale. **Express.js** for battle-tested APIs, **AdonisJS** for full-featured backends with elegant architecture, **Bun** with **ElysiaJS** for prototypes that become production.",
               skills: ["Express.js", "AdonisJS", "Bun", "ElysiaJS"],
             },
           ],
@@ -194,14 +194,14 @@ What excites me most is impact through people and systems. I lead with technical
           name: "Architecture & Data",
           items: [
             {
-              name: "Architectural Patterns",
-              description: "**Microservices**, **RESTful APIs**, Monolithic Migration.",
-              skills: ["Microservices", "RESTful APIs", "Monolithic Migration"],
+              name: "System Architecture",
+              description: "I design systems that survive reality. **Microservices** for teams that need independence, **RESTful APIs** that age well, **GraphQL** when clients need flexibility. I've migrated monoliths, split services, and made architectural decisions that let teams move fast without breaking things.",
+              skills: ["Microservices", "RESTful APIs", "GraphQL", "Event-Driven Architecture"],
             },
             {
-              name: "Databases",
-              description: "**MySQL**, **PostgreSQL**, **Redis**.",
-              skills: ["MySQL", "PostgreSQL", "Redis"],
+              name: "Databases & Caching",
+              description: "Data is the hard part. I optimize **MySQL** and **PostgreSQL** schemas, design indexes that matter, implement **Redis** caching strategies that actually improve performance, and have migrated production databases with zero downtime.",
+              skills: ["MySQL", "PostgreSQL", "Redis", "Query Optimization"],
             },
           ],
         },
@@ -209,15 +209,15 @@ What excites me most is impact through people and systems. I lead with technical
     },
     {
       category: "Cloud Infrastructure & DevOps",
-      description: "Cloud-agnostic capability with a stronghold in Google Cloud.",
+      description: "I build for production, not just localhost. Cloud-agnostic capability with deep expertise in Google Cloud.",
       subcategories: [
         {
           name: "Cloud Platforms",
           items: [
             {
               name: "Multi-Cloud Expertise",
-              description: "**Google Cloud Platform (GCP)** - Certified Professional Developer. **AWS** and **Microsoft Azure** - practical implementations.",
-              skills: ["GCP", "AWS", "Microsoft Azure"],
+              description: "**Google Cloud Platform (GCP)** is my home—Certified Professional Developer with production experience in Compute Engine, Cloud Run, and GKE. I also work with **AWS** (EC2, RDS, Lambda) and **Microsoft Azure** when projects demand it. I choose platforms based on what solves the problem, not what's trendy.",
+              skills: ["GCP", "AWS", "Microsoft Azure", "Cloud Architecture"],
             },
           ],
         },
@@ -225,14 +225,14 @@ What excites me most is impact through people and systems. I lead with technical
           name: "DevOps & CI/CD",
           items: [
             {
-              name: "Containerization",
-              description: "**Docker** & **Kubernetes (GKE)**.",
-              skills: ["Docker", "Kubernetes", "GKE"],
+              name: "Containerization & Orchestration",
+              description: "**Docker** is how I ship. **Kubernetes (GKE)** is how I scale. I've containerized legacy apps, orchestrated multi-service deployments, and debugged production clusters at 3 AM. I know when to use them and when they're overkill.",
+              skills: ["Docker", "Kubernetes", "GKE", "Container Orchestration"],
             },
             {
-              name: "Pipelines",
-              description: "**Jenkins**, **Github Actions**, **GitLab CI**.",
-              skills: ["Jenkins", "Github Actions", "GitLab CI"],
+              name: "CI/CD Pipelines",
+              description: "Automation that developers trust. **Jenkins** for legacy enterprise workflows, **GitHub Actions** for modern workflows that just work, **GitLab CI** when everything lives in one place. I've reduced deployment times from hours to minutes and made rollbacks a non-event.",
+              skills: ["Jenkins", "Github Actions", "GitLab CI", "Automated Deployment"],
             },
           ],
         },
@@ -240,35 +240,35 @@ What excites me most is impact through people and systems. I lead with technical
     },
     {
       category: "AI-Augmented Workflow",
-      description: "Orchestrating the best AI models to accelerate architectural logic and code quality.",
+      description: "How I think faster, prototype quicker, and validate more thoroughly. AI as a thinking partner, not a replacement for judgment.",
       subcategories: [
         {
-          name: "Multi-Model Approach",
-          description: "Selecting specific LLMs based on their strengths:",
+          name: "Strategic AI Usage",
+          description: "I don't use AI for everything—I use it strategically:",
           items: [
             {
               name: "Claude",
-              description: "Complex system architecture, deep reasoning, refactoring.",
-              skills: ["Architecture", "Reasoning", "Refactoring"],
+              description: "My go-to for complex system architecture, deep reasoning about tradeoffs, and refactoring legacy code. When I need to think through hard problems, Claude helps me explore more paths faster.",
+              skills: ["Architecture", "Deep Reasoning", "Refactoring"],
             },
             {
-              name: "GPT Family",
-              description: "Rapid prototyping and boilerplate generation.",
-              skills: ["Prototyping", "Boilerplate"],
+              name: "GPT Family (ChatGPT)",
+              description: "Rapid prototyping and boilerplate generation. Perfect for getting 80% of the way there on common patterns, then I refine the remaining 20% that matters.",
+              skills: ["Prototyping", "Boilerplate", "Code Generation"],
             },
             {
               name: "Gemini",
-              description: "Google ecosystem integration and large context analysis.",
-              skills: ["Google Integration", "Context Analysis"],
+              description: "Google ecosystem integration and large context analysis. Especially useful for understanding legacy codebases and cross-referencing documentation at scale.",
+              skills: ["Google Integration", "Context Analysis", "Code Understanding"],
             },
           ],
         },
         {
-          name: "AI Tools",
+          name: "Development Tools",
           items: [
             {
-              name: "Development Tools",
-              description: "**Github Copilot**, **Cursor**, **Gemini Code Assist**.",
+              name: "AI-Powered IDEs",
+              description: "**GitHub Copilot** for autocomplete that reads my mind, **Cursor** for AI-native editing workflows, **Gemini Code Assist** for GCP-specific tasks. But every suggestion gets reviewed—AI accelerates, experience validates.",
               skills: ["Github Copilot", "Cursor", "Gemini Code Assist"],
             },
           ],
@@ -277,35 +277,35 @@ What excites me most is impact through people and systems. I lead with technical
     },
     {
       category: "Engineering Leadership",
-      description: "Bridging technical execution and business goals through strategic management.",
+      description: "What I've learned from leading teams, scaling organizations, and making technical decisions that have business consequences.",
       subcategories: [
         {
-          name: "Leadership Dimensions",
+          name: "Leadership in Practice",
           items: [
             {
               name: "Strategic Leadership",
-              description: "Cross-functional teams, technical roadmaps, backend chapter management.",
-              skills: ["Teams", "Roadmaps", "Chapter Lead"],
+              description: "I've led cross-functional teams, built technical roadmaps that survive contact with reality, and managed backend chapters where standards matter. Leadership is about making the right tradeoffs when perfect isn't possible.",
+              skills: ["Cross-Functional Teams", "Technical Roadmaps", "Chapter Leadership"],
             },
             {
               name: "People Growth & Mentorship",
-              description: "Active coaching, mentorship, continuous learning culture.",
-              skills: ["Coaching", "Mentorship", "Learning"],
+              description: "I mentor the way I wish someone had mentored me: with patience, high standards, and genuine belief that great engineers are made, not born. I've seen junior engineers become tech leads and watched teams grow beyond what they thought possible.",
+              skills: ["Active Coaching", "Technical Mentorship", "Career Development"],
             },
             {
               name: "Operational Excellence",
-              description: "**Agile/Scrum**, Sprint Planning, **OKRs/KPIs**.",
-              skills: ["Agile", "Scrum", "OKRs", "KPIs"],
+              description: "**Agile/Scrum** when it adds value, pragmatism when it doesn't. Sprint planning that teams actually follow, **OKRs** that align work with business goals, **KPIs** that measure what matters instead of what's easy.",
+              skills: ["Agile", "Scrum", "OKRs", "KPIs", "Process Design"],
             },
             {
               name: "Stakeholder Management",
-              description: "Product and C-Level collaboration, business translation.",
-              skills: ["Collaboration", "Strategy"],
+              description: "Translating between technical reality and business expectations. I work with product teams to find what's possible, and with C-level stakeholders to explain why the right solution takes time. Technical credibility earns trust; trust enables good decisions.",
+              skills: ["Product Collaboration", "Executive Communication", "Business Translation"],
             },
             {
               name: "Talent Acquisition",
-              description: "End-to-end hiring for high-performing, resilient teams.",
-              skills: ["Hiring", "Team Building"],
+              description: "I hire for potential, not just pedigree. End-to-end hiring for high-performing teams means looking beyond resumes—finding people who solve problems, learn fast, and make teams better by being part of them.",
+              skills: ["Technical Interviewing", "Team Building", "Talent Assessment"],
             },
           ],
         },
