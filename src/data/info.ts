@@ -1,7 +1,7 @@
 export const info = {
   baseUrl: "https://astro-portfolio-uzair.vercel.app",
   name: "Hadian Rahmat",
-  jobDescription: "Engineering Manager",
+  jobDescription: "Full Stack Engineer | Tech Leader",
   about: `From writing my first lines of code to leading engineering teams, my journey in software development has been a **continuous path of growth**. Over the past **8 years**, I've had the privilege to work across diverse roles—**Fullstack Engineer**, **Backend Engineer**, **Chapter Lead**, and **Engineering Manager**—building applications that solve real problems and scaling systems that impact thousands of users.
 
 In an evolving tech landscape, I combine **deep engineering fundamentals** with **modern AI-assisted workflows**. I leverage tools like **Copilot**, **Claude**, and **Gemini** to accelerate development cycles and enhance code review pipelines. However, I prioritize **validation over generation**; my experience allows me to rigorously architect and scrutinize AI outputs, ensuring **robust and scalable solutions** rather than falling into the trap of '**vibe coding**' without substance.
