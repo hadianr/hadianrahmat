@@ -253,4 +253,20 @@ import MetaHead from "@components/general/MetaHead.astro";
       }
     });
   }
+
+  // Auto-download when visiting /cv?download=1
+  document.addEventListener('DOMContentLoaded', () => {
+    try {
+      const params = new URL(window.location.href).searchParams;
+      const shouldDownload = params.get('download') === '1';
+      if (shouldDownload && exportBtn) {
+        // slight delay to allow fonts/rendering
+        setTimeout(() => {
+          exportBtn.click();
+        }, 300);
+      }
+    } catch (e) {
+      console.warn('Failed to parse URL params for auto-download', e);
+    }
+  });
 </script>

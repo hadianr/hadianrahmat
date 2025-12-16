@@ -20,6 +20,17 @@ const formatText = (text: string) => {
   <div class="text-lg mb-16 space-y-4 about-content">
     <Fragment set:html={formatText(about)} />
   </div>
+  <!-- CTA to CV page -->
+  <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-20">
+    <a href="/cv" class="cta-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" class="icon">
+        <path d="M17 8l4 4-4 4M3 12h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span>View ATS CV</span>
+      <span class="badge">ATS-ready</span>
+    </a>
+    <a href="#experience" class="cta-secondary">Learn more about my experience</a>
+  </div>
 </section>
 
 <style>
@@ -32,5 +43,71 @@ const formatText = (text: string) => {
   .about-content :global(strong) {
     font-weight: 600;
     color: inherit;
+  }
+
+  /* CTA styles */
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(60, 64, 67, 0.3);
+    transform: translateY(0);
+    transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(60, 64, 67, 0.35);
+    opacity: 0.98;
+  }
+
+  .cta-primary .icon {
+    stroke: currentColor;
+  }
+
+  .cta-primary .badge {
+    margin-left: 0.4rem;
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+
+  .cta-secondary {
+    color: var(--text-secondary, #64748b);
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .cta-secondary::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.2s ease;
+  }
+
+  .cta-secondary:hover::after {
+    width: 100%;
+  }
+
+  :global(.dark) .cta-secondary {
+    color: #cbd5e1;
+  }
+
+  /* Smooth scroll for anchor links */
+  :global(html) {
+    scroll-behavior: smooth;
   }
 </style>
