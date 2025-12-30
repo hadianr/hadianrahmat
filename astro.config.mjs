@@ -17,19 +17,18 @@ export default defineConfig({
     robotsTxt(),
   ],
   build: {
-    inlineStylesheets: 'always', // Inline critical CSS for faster FCP
+    inlineStylesheets: 'always',
   },
   vite: {
     build: {
-      cssCodeSplit: true,
-      minify: 'esbuild',
-      target: 'esnext',
+      cssCodeSplit: false, // Combine CSS to reduce requests
+      minify: 'terser', // Better minification
+      target: 'es2020', // Modern browsers
       cssMinify: true,
       rollupOptions: {
         output: {
           manualChunks: undefined,
           assetFileNames: (assetInfo) => {
-            // Better asset naming for caching
             if (assetInfo.name.endsWith('.css')) {
               return 'assets/css/[name].[hash][extname]';
             }
@@ -38,10 +37,10 @@ export default defineConfig({
         }
       },
     },
-    // Enable build optimizations
     ssr: {
       noExternal: ['@astrojs/*'],
     },
   },
-  compressHTML: true, // Minify HTML output
+  compressHTML: true,
+  telemetry: false,
 });
