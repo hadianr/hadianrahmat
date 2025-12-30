@@ -16,4 +16,20 @@ export default defineConfig({
     }),
     robotsTxt(),
   ],
+  build: {
+    inlineStylesheets: 'auto',
+  },
+  vite: {
+    build: {
+      cssCodeSplit: true,
+      minify: 'esbuild',
+      target: 'esnext',
+      cssMinify: true,
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        }
+      },
+    },
+  },
 });

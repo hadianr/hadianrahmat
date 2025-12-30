@@ -13,7 +13,8 @@ import MetaHead from "@components/general/MetaHead.astro";
       description={"Download CV in ATS-friendly format"}
       ogImageUrl={"/assets/images/profile.png"}
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Lazy load PDF library only when needed -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   </head>
 
   <body>
@@ -167,103 +168,154 @@ import MetaHead from "@components/general/MetaHead.astro";
 </script>
 
 <script is:inline>
+  // Lazy load PDF library
+  let pdfLibLoaded = false;
+  let pdfLibLoading = false;
+
+  async function loadPdfLibrary() {
+    if (pdfLibLoaded) return true;
+    if (pdfLibLoading) {
+      // Wait for existing load to complete
+      return new Promise((resolve) => {
+        const checkInterval = setInterval(() => {
+          if (pdfLibLoaded) {
+            clearInterval(checkInterval);
+            resolve(true);
+          }
+        }, 100);
+      });
+    }
+
+    pdfLibLoading = true;
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+      script.async = true;
+      script.onload = () => {
+        pdfLibLoaded = true;
+        pdfLibLoading = false;
+        resolve(true);
+      };
+      script.onerror = () => {
+        pdfLibLoading = false;
+        reject(new Error('Failed to load PDF library'));
+      };
+      document.head.appendChild(script);
+    });
+  }
+
   const exportBtn = document.getElementById("exportPdfBtn");
   const loadingSpinner = document.getElementById("loadingSpinner");
   const downloadIcon = exportBtn?.querySelector("svg:first-of-type");
   const buttonText = exportBtn?.querySelector("span");
   
+  function setButtonState(loading, text = "Download PDF") {
+    if (!loadingSpinner || !downloadIcon || !buttonText || !exportBtn) return;
+    
+    if (loading) {
+      downloadIcon.style.display = "none";
+      loadingSpinner.style.display = "block";
+      buttonText.textContent = text;
+      exportBtn.disabled = true;
+      exportBtn.classList.add("opacity-75", "cursor-wait");
+    } else {
+      loadingSpinner.style.display = "none";
+      downloadIcon.style.display = "block";
+      buttonText.textContent = text;
+      exportBtn.disabled = false;
+      exportBtn.classList.remove("opacity-75", "cursor-wait");
+    }
+  }
+  
   if (exportBtn) {
     exportBtn.addEventListener("click", async () => {
       try {
-        // Show loading state
-        if (loadingSpinner && downloadIcon && buttonText) {
-          downloadIcon.classList.add("hidden");
-          loadingSpinner.classList.remove("hidden");
-          buttonText.textContent = "Generating PDF...";
-          exportBtn.disabled = true;
-          exportBtn.classList.add("opacity-75", "cursor-wait");
-        }
+        setButtonState(true, "Loading library...");
 
-        // Use the global html2pdf from CDN
+        // Lazy load PDF library
+        await loadPdfLibrary();
+        
+        setButtonState(true, "Generating PDF...");
+
         const element = document.querySelector(".cv-ats");
         if (!element) {
-          alert("CV not found");
-          return;
+          throw new Error("CV element not found");
         }
 
+        // Optimized PDF options
         const options = {
-          margin: [0.5, 0.5, 0.5, 0.5],
-          filename: "Hadian_Rahmat_CV.pdf",
-          image: { type: "jpeg", quality: 0.98 },
+          margin: [0.4, 0.4, 0.4, 0.4],
+          filename: `Hadian_Rahmat_CV_${new Date().getFullYear()}.pdf`,
+          image: { 
+            type: "jpeg", 
+            quality: 0.95 
+          },
           html2canvas: { 
             scale: 2,
             useCORS: true,
-            letterRendering: true
+            letterRendering: true,
+            logging: false,
+            width: element.scrollWidth,
+            height: element.scrollHeight,
+            windowWidth: element.scrollWidth,
+            windowHeight: element.scrollHeight
           },
           jsPDF: { 
             unit: "in", 
             format: "letter", 
-            orientation: "portrait" 
+            orientation: "portrait",
+            compress: true
           },
           pagebreak: { 
             mode: ['avoid-all', 'css', 'legacy'],
             before: '.page-break-before',
             after: '.page-break-after',
-            avoid: ['h2', 'h3']
+            avoid: ['h2', 'h3', 'section']
           }
         };
 
-        // Use global html2pdf from CDN script
-        if (typeof html2pdf !== "undefined") {
-          await html2pdf().set(options).from(element).save();
-          
-          // Reset button state after successful download
-          setTimeout(() => {
-            if (loadingSpinner && downloadIcon && buttonText) {
-              loadingSpinner.classList.add("hidden");
-              downloadIcon.classList.remove("hidden");
-              buttonText.textContent = "Download PDF";
-              exportBtn.disabled = false;
-              exportBtn.classList.remove("opacity-75", "cursor-wait");
-            }
-          }, 1000);
-        } else {
-          alert("PDF library not loaded. Please refresh the page.");
-          // Reset on error
-          if (loadingSpinner && downloadIcon && buttonText) {
-            loadingSpinner.classList.add("hidden");
-            downloadIcon.classList.remove("hidden");
-            buttonText.textContent = "Download PDF";
-            exportBtn.disabled = false;
-            exportBtn.classList.remove("opacity-75", "cursor-wait");
-          }
+        if (typeof html2pdf === "undefined") {
+          throw new Error("PDF library failed to load");
         }
+
+        // Generate and download
+        await html2pdf().set(options).from(element).save();
+        
+        // Success feedback
+        setButtonState(true, "Downloaded! ✓");
+        setTimeout(() => {
+          setButtonState(false, "Download PDF");
+        }, 2000);
+
       } catch (error) {
         console.error("Error exporting PDF:", error);
-        alert("Error exporting PDF. Please try again.");
+        setButtonState(false, "Download PDF");
         
-        // Reset button state on error
-        if (loadingSpinner && downloadIcon && buttonText) {
-          loadingSpinner.classList.add("hidden");
-          downloadIcon.classList.remove("hidden");
-          buttonText.textContent = "Download PDF";
-          exportBtn.disabled = false;
-          exportBtn.classList.remove("opacity-75", "cursor-wait");
-        }
+        // User-friendly error message
+        const errorMsg = error.message.includes('library') 
+          ? 'Failed to load PDF library. Please check your connection and try again.'
+          : 'Error generating PDF. Please try again.';
+        
+        alert(errorMsg);
       }
     });
   }
 
-  // Auto-download when visiting /cv?download=1
+  // Auto-download with improved handling
   document.addEventListener('DOMContentLoaded', () => {
     try {
-      const params = new URL(window.location.href).searchParams;
+      const params = new URLSearchParams(window.location.search);
       const shouldDownload = params.get('download') === '1';
+      
       if (shouldDownload && exportBtn) {
-        // slight delay to allow fonts/rendering
-        setTimeout(() => {
-          exportBtn.click();
-        }, 300);
+        // Preload library and trigger download
+        loadPdfLibrary().then(() => {
+          setTimeout(() => {
+            exportBtn.click();
+          }, 500);
+        }).catch(err => {
+          console.error('Failed to preload PDF library:', err);
+        });
       }
     } catch (e) {
       console.warn('Failed to parse URL params for auto-download', e);
