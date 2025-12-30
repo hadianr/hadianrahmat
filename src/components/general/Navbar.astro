@@ -1,6 +1,8 @@
 ---
 import { info } from "@data";
 import { createLogo } from "@utils";
+
+const isCvPage = Astro.url.pathname.startsWith("/cv");
 ---
 
 <header
@@ -13,11 +15,13 @@ import { createLogo } from "@utils";
   </a>
   <nav>
     <ul class="flex items-center">
-      <li>
-        <a class="p-4 block text-lg" href="/cv?download=1" title="Download CV as PDF">
-          Download CV
-        </a>
-      </li>
+      {!isCvPage && (
+        <li>
+          <a class="p-4 block text-lg" href="/cv?download=1" title="Download CV as PDF">
+            Download CV
+          </a>
+        </li>
+      )}
       <!-- <li>
         <a class="p-4 block text-lg" href="/contact">Contact</a>
       </li> -->

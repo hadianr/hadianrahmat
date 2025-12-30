@@ -204,44 +204,40 @@ export const generateCVATS = () => {
         <section>
           <div class="section-title">Experience</div>
           ${groupedExperience
-            .map(
-              ({ company, roles }) => {
-                const companyRange = roles.length > 1 ? formatCompanyRange(roles) : "";
-                return `
-            <div class="experience-item">
-              <div class="position-header">
-                <div class="position-title">${company}</div>
-                ${companyRange ? `<div class="date-range">${companyRange}</div>` : ""}
-              </div>
-              ${roles
-                .map(
-                  (exp) => `
-                <div class="role-entry">
+            .map(({ company, roles }) => {
+              const companyRange = roles.length > 1 ? formatCompanyRange(roles) : "";
+              const rolesHtml = roles
+                .map((exp) => {
+                  const bullets = exp.description
+                    .map((desc) => (desc.startsWith("-") ? `<li>${desc.substring(1).trim()}</li>` : `<p>${desc}</p>`))
+                    .join("");
+
+                  return `
+                    <div class="role-entry">
+                      <div class="position-header">
+                        <div class="position-title">${exp.role}</div>
+                        <div class="date-range">${formatDate(exp.startDate)} - ${formatDate(exp.endDate)}</div>
+                      </div>
+                      <div class="company-name">
+                        ${exp.employmentType ? `<span class="pill">${exp.employmentType}</span>` : ""}
+                      </div>
+                      ${exp.city ? `<div class="location">${exp.city}</div>` : ""}
+                      <div class="description">${bullets}</div>
+                    </div>
+                  `;
+                })
+                .join("");
+
+              return `
+                <div class="experience-item">
                   <div class="position-header">
-                    <div class="position-title">${exp.role}</div>
-                    <div class="date-range">${formatDate(exp.startDate)} - ${formatDate(exp.endDate)}</div>
+                    <div class="position-title">${company}</div>
+                    ${companyRange ? `<div class="date-range">${companyRange}</div>` : ""}
                   </div>
-                  <div class="company-name">
-                    ${exp.employmentType ? `<span class="pill">${exp.employmentType}</span>` : ""}
-                  </div>
-                  ${exp.city ? `<div class="location">${exp.city}</div>` : ""}
-                  <div class="description">
-                    ${exp.description
-                      .map((desc) => {
-                        if (desc.startsWith("-")) {
-                          return `<li>${desc.substring(1).trim()}</li>`;
-                        }
-                        return `<p>${desc}</p>`;
-                      })
-                      .join("")}
-                  </div>
+                  ${rolesHtml}
                 </div>
-              `
-                )
-                .join("")}
-            </div>
-          `
-            )
+              `;
+            })
             .join("")}
         </section>
 

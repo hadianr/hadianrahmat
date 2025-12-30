@@ -64,18 +64,6 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
   )
 }
 
-<!-- preload assests -->
-<link
-  rel="preload"
-  href="/assets/fonts/Inter/Inter-Regular.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="/assets/fonts/Outfit/Outfit-SemiBold.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-/>
+<!-- Google Fonts performance hints -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

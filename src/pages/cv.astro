@@ -237,46 +237,44 @@ import MetaHead from "@components/general/MetaHead.astro";
         
         setButtonState(true, "Generating PDF...");
 
+        // Lock scroll to prevent layout shift during capture
+        const originalOverflow = document.documentElement.style.overflow;
+        const originalBodyOverflow = document.body.style.overflow;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+
         const element = document.querySelector(".cv-ats");
         if (!element) {
           throw new Error("CV element not found");
         }
 
-        // Optimized PDF options
+        // Simplified PDF options for reliable rendering
         const options = {
-          margin: [0.4, 0.4, 0.4, 0.4],
+          margin: 0,
           filename: `Hadian_Rahmat_CV_${new Date().getFullYear()}.pdf`,
-          image: { 
-            type: "jpeg", 
-            quality: 0.95 
-          },
-          html2canvas: { 
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: {
             scale: 2,
             useCORS: true,
-            letterRendering: true,
             logging: false,
-            width: element.scrollWidth,
-            height: element.scrollHeight,
-            windowWidth: element.scrollWidth,
-            windowHeight: element.scrollHeight
+            backgroundColor: "#ffffff"
           },
-          jsPDF: { 
-            unit: "in", 
-            format: "letter", 
-            orientation: "portrait",
-            compress: true
-          },
-          pagebreak: { 
-            mode: ['avoid-all', 'css', 'legacy'],
-            before: '.page-break-before',
-            after: '.page-break-after',
-            avoid: ['h2', 'h3', 'section']
+          jsPDF: {
+            unit: "in",
+            format: "letter",
+            orientation: "portrait"
           }
         };
 
         if (typeof html2pdf === "undefined") {
           throw new Error("PDF library failed to load");
         }
+
+        // Wait for fonts
+        if (document.fonts && document.fonts.ready) {
+          await document.fonts.ready;
+        }
+        await new Promise((r) => setTimeout(r, 300));
 
         // Generate and download
         await html2pdf().set(options).from(element).save();
@@ -285,11 +283,15 @@ import MetaHead from "@components/general/MetaHead.astro";
         setButtonState(true, "Downloaded! ✓");
         setTimeout(() => {
           setButtonState(false, "Download PDF");
+          document.documentElement.style.overflow = originalOverflow;
+          document.body.style.overflow = originalBodyOverflow;
         }, 2000);
 
       } catch (error) {
         console.error("Error exporting PDF:", error);
         setButtonState(false, "Download PDF");
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
         
         // User-friendly error message
         const errorMsg = error.message.includes('library') 
@@ -312,7 +314,7 @@ import MetaHead from "@components/general/MetaHead.astro";
         loadPdfLibrary().then(() => {
           setTimeout(() => {
             exportBtn.click();
-          }, 500);
+          }, 700); // extra delay to ensure fonts & layout are ready
         }).catch(err => {
           console.error('Failed to preload PDF library:', err);
         });
