@@ -17,7 +17,7 @@ export default defineConfig({
     robotsTxt(),
   ],
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always', // Inline critical CSS for faster FCP
   },
   vite: {
     build: {
@@ -28,8 +28,20 @@ export default defineConfig({
       rollupOptions: {
         output: {
           manualChunks: undefined,
+          assetFileNames: (assetInfo) => {
+            // Better asset naming for caching
+            if (assetInfo.name.endsWith('.css')) {
+              return 'assets/css/[name].[hash][extname]';
+            }
+            return 'assets/[name].[hash][extname]';
+          },
         }
       },
     },
+    // Enable build optimizations
+    ssr: {
+      noExternal: ['@astrojs/*'],
+    },
   },
+  compressHTML: true, // Minify HTML output
 });

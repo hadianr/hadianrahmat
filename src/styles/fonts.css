@@ -1,2 +1,1 @@
-/* Use Google Fonts (woff2, display=swap) for smaller, faster font delivery */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap');
+/* Fonts loaded via preload in MetaHead for better performance */

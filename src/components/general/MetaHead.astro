@@ -9,6 +9,30 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- DNS Prefetch & Preconnect for Google Fonts (critical for performance) -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Preload critical fonts to eliminate render blocking -->
+<link 
+  rel="preload" 
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+/>
+<link 
+  rel="stylesheet" 
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+  media="print" 
+  onload="this.media='all'"
+/>
+<noscript>
+  <link 
+    rel="stylesheet" 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+  />
+</noscript>
+
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -63,7 +87,3 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
     <meta property="twitter:image" content={`${info.baseUrl}${ogImageUrl}`} />
   )
 }
-
-<!-- Google Fonts performance hints -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
