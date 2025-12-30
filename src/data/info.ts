@@ -21,10 +21,10 @@ What excites me most is impact through people and systems. I lead with technical
       employmentType: "Freelance / Contract",
       city: "Jakarta, Indonesia",
       description: [
-        "As a Full Stack Engineer at Staffinc Group, I contribute to the development of innovative solutions that drive business success. Working in a hybrid environment in Jakarta, I leverage my expertise in both frontend and backend technologies to build scalable and user-centric applications.",
-        "- Developing full-stack applications that meet client requirements and business objectives.",
-        "- Collaborating with product and design teams to ensure seamless integration of features and optimal user experience.",
-        "- Implementing best practices in code quality, security, and performance optimization.",
+        "Delivered full-stack solutions for enterprise clients as a contract engineer, building scalable applications using modern JavaScript frameworks and backend technologies.",
+        "- Developed end-to-end features from database design to frontend implementation, ensuring seamless user experience and maintainable code architecture.",
+        "- Collaborated with cross-functional teams to translate business requirements into technical solutions, maintaining alignment between product vision and implementation.",
+        "- Applied industry best practices in code quality, security standards, and performance optimization throughout the development lifecycle.",
       ],  
     },
     {
@@ -35,10 +35,10 @@ What excites me most is impact through people and systems. I lead with technical
       employmentType: "Full-time",
       city: "Bandung, Indonesia",
       description: [
-        "As a Fullstack Engineer, I leverage my extensive experience in software development to drive digital transformation within the public sector. I am instrumental in designing, developing, and maintaining critical applications that streamline civil service processes, enhancing efficiency and accessibility for thousands of employees across the region.",
-        "- Developing and optimizing full-stack applications to meet the evolving needs of the agency.",
-        "- Implementing robust and scalable solutions that ensure data security and system reliability.",
-        "- Collaborating with cross-functional teams to deliver innovative and user-centric applications.",
+        "Drove digital transformation in public sector as Technical Expert, architecting and developing critical civil service applications serving employees across West Java province.",
+        "- Designed and implemented full-stack applications for government operations, modernizing legacy systems and improving service delivery for civil servants.",
+        "- Ensured compliance with government security standards and data protection regulations while maintaining high system reliability and availability.",
+        "- Bridged technical and non-technical stakeholders, translating complex technical concepts into actionable insights for government officials.",
       ],  
     },
     {
@@ -49,12 +49,12 @@ What excites me most is impact through people and systems. I lead with technical
       employmentType: "Full-time",
       city: "Bandung, Indonesia",
       description: [
-        "I lead a team of talented software engineers to develop and maintain high-quality products. With experience in the tech industry, I have a proven track record of delivering successful projects on time and within budget. In my current role, I prioritize collaboration and clear communication to ensure that my team has the support and resources they need to do their best work. I also stay up-to-date on industry best practices and emerging technologies to ensure that we are using the right tools and approaches to meet the evolving needs of our customers.",
-        "- Improving team productivity, efficiency, and collaboration leading to faster project delivery and higher-quality outcomes.",
-        "- Leading projects from conception to completion, meeting or exceeding project goals, timelines, and budgets while ensuring high-quality deliverables.",
-        "- Implementing process improvements and best practices such as Agile methodologies, CI/CD pipelines, and DevOps practices to streamline development workflows and increase efficiency.",
-        "- Cross-Functional Collaboration: Facilitating effective collaboration between engineering teams and other departments such as product management, design, and QA to ensure alignment and smooth project execution.",
-        "- Technical Innovation: Spearheading initiatives to explore and adopt new technologies, tools, and frameworks to enhance product features, performance, and scalability."
+        "Led engineering team through successful delivery of enterprise projects, establishing technical standards and development processes that improved team velocity and product quality.",
+        "- Built and managed high-performing engineering team, implementing Agile practices and establishing clear development workflows that enabled consistent project delivery.",
+        "- Drove adoption of CI/CD pipelines and DevOps practices, transforming deployment process from manual releases to automated continuous delivery.",
+        "- Collaborated with product management, design, and QA to align technical execution with business objectives, ensuring seamless cross-functional project delivery.",
+        "- Championed technical innovation by evaluating and introducing modern technologies and frameworks that enhanced product capabilities and developer productivity.",
+        "- Mentored engineers through code reviews, architectural discussions, and career development planning, fostering culture of technical excellence and continuous learning."
       ],  
     },
 
@@ -66,11 +66,11 @@ What excites me most is impact through people and systems. I lead with technical
       employmentType: "Full-time",
       city: "Bandung, Indonesia",
       description: [
-        "I manage a team of experienced software engineers who develop and maintain the server-side of our products. I am skilled in leading cross-functional teams and implementing best practices to ensure the success of our projects. In my current role, I work closely with the product and design teams to deliver scalable and reliable backend solutions that meet the needs of our customers. I also mentor and provide guidance to my team members to help them grow and succeed in their careers.",
-        "- Team Growth and Development: Successfully mentoring junior engineers, fostering their technical growth, and helping them advance their careers within the organization.",
-        "- Technical Leadership: Providing guidance and leadership to backend engineering teams, ensuring alignment with best practices, architectural standards, and coding conventions.",
-        "- Project Delivery: Leading backend development efforts on complex projects, ensuring timely delivery of high-quality, scalable solutions that meet or exceed client requirements.",
-        "- Code Quality Improvement: Implementing initiatives to improve code quality, readability, and maintainability through code reviews, refactoring, and adherence to coding standards."
+        "Led backend engineering chapter, establishing architectural standards and technical practices that shaped backend development across multiple product teams.",
+        "- Mentored backend engineers from junior to senior levels, conducting technical reviews and career development sessions that accelerated team capability growth.",
+        "- Established backend architectural standards and coding conventions, ensuring consistency and quality across microservices and API implementations.",
+        "- Led backend architecture for complex enterprise projects, designing scalable solutions that met performance requirements and client expectations.",
+        "- Implemented code quality initiatives including structured code review processes, refactoring strategies, and technical documentation standards that improved codebase maintainability."
       ],
     },
 
@@ -82,15 +82,13 @@ What excites me most is impact through people and systems. I lead with technical
       employmentType: "Full-time",
       city: "Bandung, Indonesia",
       description: [
-        "I am responsible for developing and maintaining the server-side of our products. In my current role, I work closely with the rest of the engineering team to design and implement scalable, efficient, and reliable backend solutions. I also stay up-to-date on the latest industry best practices and technologies to ensure that we are using the right tools to meet the evolving needs of our customers.",
-        "- Scalable Architecture: Designing and implementing scalable backend architectures that accommodate rapid user growth and ensure high performance under heavy loads. ",
-        "- Optimized Database Performance: Optimizing database queries, indexing strategies, and data models to improve overall system performance and reduce latency.",
-        "- Security Enhancements: Implementing robust security measures such as encryption, authentication, and authorization to protect sensitive data and prevent security breaches.",
-        "- Feature Development: Leading the development of key backend features or modules that enhance product functionality, usability, and customer satisfaction.",
-        "- API Design and Documentation: Designing intuitive and well-documented APIs that facilitate seamless integration with frontend applications and third-party services.",
-        "- Bug Fixing and Maintenance: Proactively identifying and resolving bugs or performance issues in the backend codebase, ensuring a stable and reliable application experience for users.",
-        "- Code Quality and Standards: Maintaining high standards of code quality, readability, and maintainability through code reviews, coding standards, and best practices.",
-        "- Continuous Learning: Actively seeking opportunities for learning and professional development to stay updated on industry trends, emerging technologies, and best practices in backend development."
+        "Architected and developed backend systems serving production traffic, building scalable microservices and RESTful APIs using Go, Node.js, and PHP frameworks.",
+        "- Designed backend architectures supporting high-concurrency workloads, implementing caching strategies and load balancing that maintained performance under peak traffic.",
+        "- Optimized database performance through query analysis, strategic indexing, and schema refinements, achieving significant improvements in response times and throughput.",
+        "- Implemented comprehensive security measures including authentication systems, authorization frameworks, and data encryption, ensuring compliance with security standards.",
+        "- Developed critical backend features and API endpoints that enabled new product capabilities and enhanced user experience across multiple client applications.",
+        "- Created well-documented RESTful APIs with clear contracts, facilitating smooth integration for frontend teams and external service providers.",
+        "- Maintained production stability through proactive monitoring, debugging complex issues, and implementing fixes that minimized downtime and user impact."
       ],
     },
 
@@ -102,7 +100,9 @@ What excites me most is impact through people and systems. I lead with technical
       employmentType: "Full-time",
       city: "Bandung, Indonesia",
       description: [
-        "I am a Full-Stack Developer with a comprehensive skill set spanning both front-end and back-end development. I have experience in designing and developing complete web applications from the ground up. My expertise includes Laravel and Codeigniter. I am passionate about creating innovative and efficient web solutions.",
+        "Built full-stack web applications for client projects using Laravel and CodeIgniter, developing end-to-end features from database design to frontend interfaces.",
+        "- Delivered complete web solutions for business clients, handling requirements gathering, technical implementation, and deployment to production environments.",
+        "- Developed proficiency in MVC architecture patterns and PHP frameworks, establishing foundation for backend engineering expertise.",
       ],
     },
   ],
