@@ -15,9 +15,6 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
       },
-      screens: {
-        sm: "640px",
-      },
     },
   },
   corePlugins: {

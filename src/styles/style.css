@@ -8,19 +8,15 @@
   body {
     @apply bg-light dark:bg-dark text-dark-gray dark:text-gray font-inter;
   }
-  
   h1,h2,h3,h4,h5,h6 {
     @apply font-outfit;
   }
-  
   h1 {
     @apply text-6xl sm:text-8xl;
   }
-  
   h2 {
     @apply text-xl font-semibold;
   }
-  
   p,li,a {
     @apply font-inter;
   }
@@ -30,7 +26,6 @@
   .container {
     @apply max-w-[1112px] mx-auto px-4;
   }
-  
   .footer-icons {
     @apply flex items-center justify-center border rounded-lg p-4 border-dark dark:border-light dark:text-light;
   }

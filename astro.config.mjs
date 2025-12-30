@@ -19,26 +19,19 @@ export default defineConfig({
     robotsTxt(),
   ],
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'never', // Defer all CSS to avoid render-blocking
   },
   vite: {
     build: {
-      cssCodeSplit: true,
-      minify: 'terser',
+      cssCodeSplit: false,
+      minify: 'esbuild',
       target: 'es2020',
       cssMinify: 'lightningcss',
       rollupOptions: {
         output: {
-          manualChunks: (id) => {
-            if (id.includes('node_modules')) {
-              if (id.includes('tailwindcss')) {
-                return 'tailwind';
-              }
-            }
-          },
           assetFileNames: (assetInfo) => {
             if (assetInfo.name.endsWith('.css')) {
-              return 'assets/css/[name].[hash][extname]';
+              return 'assets/[name].[hash][extname]';
             }
             return 'assets/[name].[hash][extname]';
           },
