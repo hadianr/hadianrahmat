@@ -17,17 +17,19 @@ export default defineConfig({
     robotsTxt(),
   ],
   build: {
-    inlineStylesheets: 'always',
+    inlineStylesheets: 'auto', // Only inline truly critical CSS
   },
   vite: {
     build: {
-      cssCodeSplit: false, // Combine CSS to reduce requests
-      minify: 'terser', // Better minification
-      target: 'es2020', // Modern browsers
+      cssCodeSplit: true, // Split CSS for better parallelization
+      minify: 'terser',
+      target: 'es2020',
       cssMinify: true,
       rollupOptions: {
         output: {
-          manualChunks: undefined,
+          manualChunks: {
+            tailwind: ['tailwindcss'],
+          },
           assetFileNames: (assetInfo) => {
             if (assetInfo.name.endsWith('.css')) {
               return 'assets/css/[name].[hash][extname]';

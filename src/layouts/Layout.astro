@@ -4,8 +4,9 @@ import Navbar from "@components/general/Navbar.astro";
 import "../styles/style.css";
 ---
 
-<script>
-  // Prevent layout shift during theme toggle
+<!-- Critical inline script: set color scheme before rendering -->
+<script is:inline>
+  // This runs immediately to prevent flash of unstyled content
   document.documentElement.style.colorScheme = 'light dark';
 </script>
 
