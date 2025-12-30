@@ -7,7 +7,9 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://astro-portfolio-uzair.vercel.app",
   integrations: [
-    tailwind(),
+    tailwind({
+      configFile: './tailwind.config.cjs',
+    }),
     sitemap({
       changefreq: "weekly",
       priority: 0.7,
@@ -17,18 +19,22 @@ export default defineConfig({
     robotsTxt(),
   ],
   build: {
-    inlineStylesheets: 'auto', // Only inline truly critical CSS
+    inlineStylesheets: 'auto',
   },
   vite: {
     build: {
-      cssCodeSplit: true, // Split CSS for better parallelization
+      cssCodeSplit: true,
       minify: 'terser',
       target: 'es2020',
-      cssMinify: true,
+      cssMinify: 'lightningcss',
       rollupOptions: {
         output: {
-          manualChunks: {
-            tailwind: ['tailwindcss'],
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              if (id.includes('tailwindcss')) {
+                return 'tailwind';
+              }
+            }
           },
           assetFileNames: (assetInfo) => {
             if (assetInfo.name.endsWith('.css')) {
