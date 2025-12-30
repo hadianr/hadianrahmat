@@ -9,11 +9,36 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- Script to defer CSS loading from critical path -->
+<script is:inline>
+  // Find and defer main stylesheet after page load
+  const deferCSS = () => {
+    const links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (const link of links) {
+      if (link.href.includes('/assets/') && link.href.includes('.css')) {
+        // Load in background
+        link.media = 'print';
+        if (link.onload === null) {
+          link.onload = () => {
+            link.media = 'all';
+            link.onload = null;
+          };
+        }
+      }
+    }
+  };
+  // Defer CSS: check if it's already in DOM or wait for it
+  if (document.readyState !== 'loading') {
+    deferCSS();
+  }
+  document.addEventListener('DOMContentLoaded', deferCSS);
+</script>
+
 <!-- Optimize connection to external resources -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<!-- Load only necessary font weights -->
+<!-- Load only necessary font weights with font-display swap -->
 <link 
   rel="preload" 
   as="style"
@@ -23,7 +48,7 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
   rel="stylesheet" 
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@600;700&display=swap"
   media="print" 
-  onload="this.media='all'"
+  onload="this.media='all'; this.onload=null;"
 />
 <noscript>
   <link 

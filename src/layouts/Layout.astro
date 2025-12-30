@@ -4,9 +4,17 @@ import Navbar from "@components/general/Navbar.astro";
 import "../styles/style.css";
 ---
 
-<!-- Critical inline script: set color scheme before rendering -->
+<!-- Critical script: Must run BEFORE HTML parsing completes to prevent CLS -->
 <script is:inline>
-  document.documentElement.style.colorScheme = 'light dark';
+  // Read theme from localStorage or system preference - NO DOM CHANGES
+  const t = localStorage.getItem('theme') || 
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  // Set data-theme on html without triggering reflow
+  document.documentElement.setAttribute('data-theme', t);
+  // Also set colorScheme for browser UI
+  if (document.documentElement.style) {
+    document.documentElement.style.colorScheme = 'light dark';
+  }
 </script>
 
 <Navbar />
