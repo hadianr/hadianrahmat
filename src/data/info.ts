@@ -129,6 +129,42 @@ What excites me most is impact through people and systems. I lead with technical
     }
   ],
 
+  certifications: [
+    {
+      name: "Professional Cloud Developer",
+      issuer: "Google Cloud",
+      date: "2024",
+      credentialId: "",
+      credentialUrl: "",
+      description: "Professional certification demonstrating expertise in designing, building, and deploying scalable applications on Google Cloud Platform. Covers Cloud Run, GKE, Cloud Functions, and production-ready architectures."
+    },
+    // Add more certifications here as you obtain them
+  ],
+
+  skills: {
+    languages: ["Go (Golang)", "PHP", "JavaScript", "TypeScript", "Node.js", "SQL"],
+    frameworks: ["Laravel", "AdonisJS", "Express.js", "Lumen", "CodeIgniter", "ElysiaJS"],
+    frontend: ["React", "Vue.js", "Astro", "Tailwind CSS", "HTML5", "CSS3"],
+    databases: ["MySQL", "PostgreSQL", "Redis", "MongoDB"],
+    cloud: ["Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Microsoft Azure"],
+    devops: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "GitLab CI", "Terraform"],
+    tools: ["Git", "Linux", "Nginx", "RabbitMQ", "Microservices", "RESTful API", "GraphQL"],
+    aiTools: ["Claude", "ChatGPT", "Gemini", "GitHub Copilot", "Cursor", "Gemini Code Assist"],
+    methodologies: ["Agile", "Scrum", "CI/CD", "Test-Driven Development", "Code Review"],
+    soft: ["Technical Leadership", "Team Management", "Mentorship", "Stakeholder Management", "Cross-functional Collaboration"]
+  },
+
+  languages: [
+    {
+      name: "Indonesian",
+      proficiency: "Native"
+    },
+    {
+      name: "English", 
+      proficiency: "Professional Working Proficiency"
+    }
+  ],
+
   organization: [
     {
       name: "Organizer GDG Bandung",

@@ -55,3 +55,30 @@ export interface ITechnology {
   description: string;
   subcategories: ITechnologySubcategory[];
 }
+
+export interface ICertification {
+  name: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+  credentialUrl?: string;
+  description?: string;
+}
+
+export interface ISkills {
+  languages: string[];
+  frameworks: string[];
+  frontend: string[];
+  databases: string[];
+  cloud: string[];
+  devops: string[];
+  tools: string[];
+  aiTools: string[];
+  methodologies: string[];
+  soft: string[];
+}
+
+export interface ILanguage {
+  name: string;
+  proficiency: string;
+}
