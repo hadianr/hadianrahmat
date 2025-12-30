@@ -215,145 +215,155 @@ What excites me most is impact through people and systems. I lead with technical
 
   technologies: [
     {
-      category: "Core Engineering & Backend Ecosystem",
-      description: "My foundation. I've built systems that handle millions of users, optimized databases that shaved seconds off queries, and designed APIs that teams love to integrate with.",
+      category: "Backend Engineering & Languages",
+      description: "Building scalable systems that handle production workloads.",
       subcategories: [
         {
-          name: "Languages & Runtimes",
+          name: "Backend Languages",
           items: [
             {
-              name: "PHP",
-              description: "Where I started and still deliver. **Laravel** for rapid enterprise applications, **Lumen** for lightweight APIs that fly, **Codeigniter** for maintaining legacy systems that power real businesses.",
-              skills: ["Laravel", "Codeigniter", "Lumen"],
-            },
-            {
               name: "Go (Golang)",
-              description: "For when performance is non-negotiable. I build high-concurrency microservices that process millions of requests, handle distributed workloads, and scale horizontally without breaking a sweat.",
-              skills: ["Microservices", "Concurrency", "High Performance"],
+              description: "High-concurrency microservices and distributed systems. Production experience building APIs that scale horizontally.",
+              skills: ["Microservices", "Concurrency", "Distributed Systems", "High Performance"],
             },
             {
-              name: "Node.js & Modern Runtimes",
-              description: "The JavaScript ecosystem at scale. **Express.js** for battle-tested APIs, **AdonisJS** for full-featured backends with elegant architecture, **Bun** with **ElysiaJS** for prototypes that become production.",
-              skills: ["Express.js", "AdonisJS", "Bun", "ElysiaJS"],
+              name: "Node.js Ecosystem",
+              description: "Full-featured backends with Express.js, AdonisJS for enterprise applications, and Bun with ElysiaJS for modern runtimes.",
+              skills: ["Express.js", "AdonisJS", "Bun", "ElysiaJS", "TypeScript"],
+            },
+            {
+              name: "PHP",
+              description: "Enterprise applications with Laravel, lightweight APIs with Lumen, and legacy system maintenance with CodeIgniter.",
+              skills: ["Laravel", "Lumen", "CodeIgniter", "PHP 8+"],
             },
           ],
         },
         {
-          name: "Architecture & Data",
+          name: "System Architecture & Databases",
           items: [
             {
-              name: "System Architecture",
-              description: "I design systems that survive reality. **Microservices** for teams that need independence, **RESTful APIs** that age well, **GraphQL** when clients need flexibility. I've migrated monoliths, split services, and made architectural decisions that let teams move fast without breaking things.",
-              skills: ["Microservices", "RESTful APIs", "GraphQL", "Event-Driven Architecture"],
+              name: "Architecture Patterns",
+              description: "Microservices architecture, RESTful API design, GraphQL implementations, and event-driven systems.",
+              skills: ["Microservices", "RESTful APIs", "GraphQL", "Event-Driven Architecture", "Domain-Driven Design"],
             },
             {
               name: "Databases & Caching",
-              description: "Data is the hard part. I optimize **MySQL** and **PostgreSQL** schemas, design indexes that matter, implement **Redis** caching strategies that actually improve performance, and have migrated production databases with zero downtime.",
-              skills: ["MySQL", "PostgreSQL", "Redis", "Query Optimization"],
+              description: "SQL optimization, schema design, and caching strategies for production systems.",
+              skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB", "Query Optimization", "Database Migration"],
             },
           ],
         },
       ],
     },
     {
-      category: "Cloud Infrastructure & DevOps",
-      description: "I build for production, not just localhost. Cloud-agnostic capability with deep expertise in Google Cloud.",
+      category: "Cloud & DevOps",
+      description: "Production-ready infrastructure and automated deployment pipelines.",
       subcategories: [
         {
           name: "Cloud Platforms",
           items: [
             {
-              name: "Multi-Cloud Expertise",
-              description: "**Google Cloud Platform (GCP)** is my home—Certified Professional Developer with production experience in Compute Engine, Cloud Run, and GKE. I also work with **AWS** (EC2, RDS, Lambda) and **Microsoft Azure** when projects demand it. I choose platforms based on what solves the problem, not what's trendy.",
-              skills: ["GCP", "AWS", "Microsoft Azure", "Cloud Architecture"],
+              name: "Google Cloud Platform",
+              description: "Certified Professional Developer. Production experience with Compute Engine, Cloud Run, GKE, Cloud Functions, and Cloud SQL.",
+              skills: ["GCP", "Compute Engine", "Cloud Run", "GKE", "Cloud Functions", "Cloud SQL", "Cloud Storage"],
+            },
+            {
+              name: "Multi-Cloud",
+              description: "AWS (EC2, RDS, Lambda, S3) and Microsoft Azure for cross-platform deployments.",
+              skills: ["AWS", "Microsoft Azure", "Multi-Cloud Architecture"],
             },
           ],
         },
         {
-          name: "DevOps & CI/CD",
+          name: "DevOps & Automation",
           items: [
             {
-              name: "Containerization & Orchestration",
-              description: "**Docker** is how I ship. **Kubernetes (GKE)** is how I scale. I've containerized legacy apps, orchestrated multi-service deployments, and debugged production clusters at 3 AM. I know when to use them and when they're overkill.",
-              skills: ["Docker", "Kubernetes", "GKE", "Container Orchestration"],
+              name: "Containerization",
+              description: "Docker containerization and Kubernetes orchestration for scalable deployments.",
+              skills: ["Docker", "Kubernetes", "GKE", "Container Orchestration", "Helm"],
             },
             {
               name: "CI/CD Pipelines",
-              description: "Automation that developers trust. **Jenkins** for legacy enterprise workflows, **GitHub Actions** for modern workflows that just work, **GitLab CI** when everything lives in one place. I've reduced deployment times from hours to minutes and made rollbacks a non-event.",
-              skills: ["Jenkins", "Github Actions", "GitLab CI", "Automated Deployment"],
+              description: "Automated deployment workflows with Jenkins, GitHub Actions, and GitLab CI.",
+              skills: ["Jenkins", "GitHub Actions", "GitLab CI", "Automated Testing", "Deployment Automation"],
             },
           ],
         },
       ],
     },
     {
-      category: "AI-Augmented Workflow",
-      description: "How I think faster, prototype quicker, and validate more thoroughly. AI as a thinking partner, not a replacement for judgment.",
+      category: "Frontend & Full-Stack",
+      description: "Modern frontend frameworks for complete full-stack delivery.",
       subcategories: [
         {
-          name: "Strategic AI Usage",
-          description: "I don't use AI for everything—I use it strategically:",
+          name: "Frontend Technologies",
           items: [
             {
-              name: "Claude",
-              description: "My go-to for complex system architecture, deep reasoning about tradeoffs, and refactoring legacy code. When I need to think through hard problems, Claude helps me explore more paths faster.",
-              skills: ["Architecture", "Deep Reasoning", "Refactoring"],
+              name: "JavaScript Frameworks",
+              description: "React for interactive UIs, Vue.js for progressive applications, and Astro for content-focused sites.",
+              skills: ["React", "Vue.js", "Astro", "Next.js", "Vite"],
             },
             {
-              name: "GPT Family (ChatGPT)",
-              description: "Rapid prototyping and boilerplate generation. Perfect for getting 80% of the way there on common patterns, then I refine the remaining 20% that matters.",
-              skills: ["Prototyping", "Boilerplate", "Code Generation"],
-            },
-            {
-              name: "Gemini",
-              description: "Google ecosystem integration and large context analysis. Especially useful for understanding legacy codebases and cross-referencing documentation at scale.",
-              skills: ["Google Integration", "Context Analysis", "Code Understanding"],
+              name: "Styling & Design",
+              description: "Tailwind CSS for utility-first styling and responsive design implementation.",
+              skills: ["Tailwind CSS", "CSS3", "HTML5", "Responsive Design"],
             },
           ],
         },
+      ],
+    },
+    {
+      category: "AI-Augmented Development",
+      description: "Strategic AI integration for architecture exploration and code optimization.",
+      subcategories: [
         {
-          name: "Development Tools",
+          name: "AI Development Tools",
           items: [
+            {
+              name: "AI Assistants",
+              description: "Claude for system architecture and complex reasoning, ChatGPT for rapid prototyping, Gemini for Google ecosystem integration.",
+              skills: ["Claude", "ChatGPT", "Gemini", "AI-Assisted Development"],
+            },
             {
               name: "AI-Powered IDEs",
-              description: "**GitHub Copilot** for autocomplete that reads my mind, **Cursor** for AI-native editing workflows, **Gemini Code Assist** for GCP-specific tasks. But every suggestion gets reviewed—AI accelerates, experience validates.",
-              skills: ["Github Copilot", "Cursor", "Gemini Code Assist"],
+              description: "GitHub Copilot for intelligent code completion, Cursor for AI-native workflows, Gemini Code Assist for GCP tasks.",
+              skills: ["GitHub Copilot", "Cursor", "Gemini Code Assist", "VS Code"],
             },
           ],
         },
       ],
     },
     {
-      category: "Engineering Leadership",
-      description: "What I've learned from leading teams, scaling organizations, and making technical decisions that have business consequences.",
+      category: "Engineering Leadership & Practices",
+      description: "Leading teams, mentoring engineers, and driving technical excellence.",
       subcategories: [
         {
-          name: "Leadership in Practice",
+          name: "Technical Leadership",
           items: [
             {
-              name: "Strategic Leadership",
-              description: "I've led cross-functional teams, built technical roadmaps that survive contact with reality, and managed backend chapters where standards matter. Leadership is about making the right tradeoffs when perfect isn't possible.",
-              skills: ["Cross-Functional Teams", "Technical Roadmaps", "Chapter Leadership"],
+              name: "Team & Project Management",
+              description: "Leading cross-functional teams, technical roadmap planning, and chapter leadership for backend engineering standards.",
+              skills: ["Team Leadership", "Technical Roadmaps", "Cross-Functional Collaboration", "Chapter Lead"],
             },
             {
-              name: "People Growth & Mentorship",
-              description: "I mentor the way I wish someone had mentored me: with patience, high standards, and genuine belief that great engineers are made, not born. I've seen junior engineers become tech leads and watched teams grow beyond what they thought possible.",
-              skills: ["Active Coaching", "Technical Mentorship", "Career Development"],
+              name: "Mentorship & Growth",
+              description: "Career development mentorship, technical coaching, and building high-performing engineering teams.",
+              skills: ["Mentorship", "Career Development", "Technical Coaching", "Knowledge Sharing"],
+            },
+          ],
+        },
+        {
+          name: "Process & Methodology",
+          items: [
+            {
+              name: "Agile Practices",
+              description: "Agile/Scrum implementation, sprint planning, and OKR/KPI-driven team alignment.",
+              skills: ["Agile", "Scrum", "OKRs", "KPIs", "Sprint Planning", "Retrospectives"],
             },
             {
-              name: "Operational Excellence",
-              description: "**Agile/Scrum** when it adds value, pragmatism when it doesn't. Sprint planning that teams actually follow, **OKRs** that align work with business goals, **KPIs** that measure what matters instead of what's easy.",
-              skills: ["Agile", "Scrum", "OKRs", "KPIs", "Process Design"],
-            },
-            {
-              name: "Stakeholder Management",
-              description: "Translating between technical reality and business expectations. I work with product teams to find what's possible, and with C-level stakeholders to explain why the right solution takes time. Technical credibility earns trust; trust enables good decisions.",
-              skills: ["Product Collaboration", "Executive Communication", "Business Translation"],
-            },
-            {
-              name: "Talent Acquisition",
-              description: "I hire for potential, not just pedigree. End-to-end hiring for high-performing teams means looking beyond resumes—finding people who solve problems, learn fast, and make teams better by being part of them.",
-              skills: ["Technical Interviewing", "Team Building", "Talent Assessment"],
+              name: "Stakeholder Collaboration",
+              description: "Product collaboration, executive communication, and technical-to-business translation.",
+              skills: ["Stakeholder Management", "Product Collaboration", "Executive Communication", "Technical Writing"],
             },
           ],
         },
