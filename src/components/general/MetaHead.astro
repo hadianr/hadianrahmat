@@ -9,16 +9,16 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="format-detection" content="telephone=no" />
 
-<!-- DNS prefetch and preconnect for critical resources -->
+<!-- Preconnect to speed up font loading -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<!-- Load fonts asynchronously -->
+<!-- Load fonts asynchronously with swap for instant text rendering -->
 <link 
   rel="stylesheet" 
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@600;700&display=swap"
   media="print"
-  onload="this.media='all'"
+  onload="this.media='all';this.onload=null"
 />
 <noscript>
   <link 
