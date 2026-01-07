@@ -37,41 +37,43 @@ const isCvPage = Astro.url.pathname.startsWith("/cv");
 </header>
 
 <script>
-  // Optimized theme toggle - no forced reflow
+  // Theme toggle - optimized to prevent forced reflow
   (function() {
     var moon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
     var sun = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
     
     function init() {
       var btn = document.getElementById('theme-button');
-      var meta = document.querySelector('[name="theme-color"]');
       if (!btn) return;
       
       var theme = 'light';
-      try {
-        theme = localStorage.getItem('theme') || 'light';
-      } catch (e) {}
-      
+      try { theme = localStorage.getItem('theme') || 'light'; } catch (e) {}
       var isDark = theme !== 'light';
-      btn.innerHTML = isDark ? sun : moon;
-      if (meta) meta.content = isDark ? '#111111' : '#FFFFFF';
+      
+      // Batch initial DOM updates in single frame
+      requestAnimationFrame(function() {
+        btn.innerHTML = isDark ? sun : moon;
+        var meta = document.querySelector('[name="theme-color"]');
+        if (meta) meta.content = isDark ? '#111111' : '#FFFFFF';
+      });
       
       btn.onclick = function() {
         isDark = !isDark;
         var newTheme = isDark ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        btn.innerHTML = isDark ? sun : moon;
-        if (meta) meta.content = isDark ? '#111111' : '#FFFFFF';
-        try {
-          localStorage.setItem('theme', newTheme);
-        } catch (e) {}
+        
+        // Batch all DOM updates in single animation frame
+        requestAnimationFrame(function() {
+          document.documentElement.setAttribute('data-theme', newTheme);
+          btn.innerHTML = isDark ? sun : moon;
+          var meta = document.querySelector('[name="theme-color"]');
+          if (meta) meta.content = isDark ? '#111111' : '#FFFFFF';
+        });
+        
+        try { localStorage.setItem('theme', newTheme); } catch (e) {}
       };
     }
     
-    if (document.readyState !== 'loading') {
-      init();
-    } else {
-      document.addEventListener('DOMContentLoaded', init);
-    }
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
   })();
 </script>
