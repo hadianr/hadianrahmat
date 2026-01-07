@@ -26,12 +26,13 @@ import MetaHead from "@components/general/MetaHead.astro";
         </div>
         
         <!-- Enhanced Download Button -->
-        <button id="exportPdfBtn">
+        <button id="exportPdfBtn" type="button" aria-label="Download CV as PDF">
           <!-- Download Icon SVG -->
           <svg 
             width="20"
             height="20"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path 
               stroke-linecap="round" 
@@ -48,6 +49,7 @@ import MetaHead from "@components/general/MetaHead.astro";
             width="20"
             height="20"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
             <path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -190,6 +192,8 @@ import MetaHead from "@components/general/MetaHead.astro";
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
       script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+      script.integrity = 'sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==';
+      script.crossOrigin = 'anonymous';
       script.async = true;
       script.onload = () => {
         pdfLibLoaded = true;
@@ -288,7 +292,6 @@ import MetaHead from "@components/general/MetaHead.astro";
         }, 2000);
 
       } catch (error) {
-        console.error("Error exporting PDF:", error);
         setButtonState(false, "Download PDF");
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
@@ -315,12 +318,12 @@ import MetaHead from "@components/general/MetaHead.astro";
           setTimeout(() => {
             exportBtn.click();
           }, 700); // extra delay to ensure fonts & layout are ready
-        }).catch(err => {
-          console.error('Failed to preload PDF library:', err);
+        }).catch(() => {
+          // Failed to preload PDF library
         });
       }
     } catch (e) {
-      console.warn('Failed to parse URL params for auto-download', e);
+      // Failed to parse URL params for auto-download
     }
   });
 </script>
