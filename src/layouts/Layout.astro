@@ -18,15 +18,13 @@ import "../styles/style.css";
   })();
 </script>
 
-<!-- Critical CSS - Absolute minimum for instant FCP -->
+<!-- Critical CSS - Minimal untuk prevent FOUC and instant LCP -->
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{font-size:16px}
-  body{font-size:16px;line-height:1.6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
   [data-theme="light"]{background:#FFF;color:#1f2937}
   [data-theme="dark"]{background:#111;color:#f3f4f6}
-  h1{font-size:clamp(3rem,8vw,6rem);font-weight:700;line-height:1.1}
-  .container{max-width:1112px;margin:0 auto;padding:0 1rem}
+  h1{font-size:clamp(3rem,8vw,6rem);font-weight:700;line-height:1.1;font-family:Outfit,sans-serif}
   .skip-link{position:absolute;top:-100px;left:0;z-index:9999}
 </style>
 

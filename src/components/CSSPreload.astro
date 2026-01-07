@@ -1,0 +1,21 @@
+---
+// This component adds preload hint for the main CSS bundle
+// The actual link tag is added by Astro during build
+---
+
+<!-- Preload main stylesheet to reduce LCP -->
+<script is:inline>
+  // Find and preload the main CSS file
+  (function() {
+    var links = document.querySelectorAll('link[rel="stylesheet"][href^="/assets/style"]');
+    if (links.length > 0) {
+      var cssUrl = links[0].href;
+      var preload = document.createElement('link');
+      preload.rel = 'preload';
+      preload.as = 'style';
+      preload.href = cssUrl;
+      preload.fetchpriority = 'high';
+      document.head.insertBefore(preload, document.head.firstChild);
+    }
+  })();
+</script>

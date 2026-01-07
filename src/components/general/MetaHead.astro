@@ -13,11 +13,12 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<!-- Preload critical fonts with high priority -->
+<!-- Preload fonts with fetchpriority high -->
 <link 
   rel="preload" 
   as="style"
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@600;700&display=swap"
+  fetchpriority="high"
   onload="this.onload=null;this.rel='stylesheet'"
 />
 <noscript>

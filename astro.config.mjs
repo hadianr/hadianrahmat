@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
+import preloadCSS from "./preload-css-plugin.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +18,7 @@ export default defineConfig({
       entryLimit: 10000,
     }),
     robotsTxt(),
+    preloadCSS(),
   ],
   build: {
     inlineStylesheets: 'always', // Inline all CSS for better performance
