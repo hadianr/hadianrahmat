@@ -18,27 +18,15 @@ import "../styles/style.css";
   })();
 </script>
 
-<!-- Critical CSS for above-the-fold content - Inlined to eliminate render-blocking -->
+<!-- Critical CSS - Absolute minimum for instant FCP -->
 <style>
-  /* Base styles */
-  html{font-size:16px}
-  body{font-size:16px;line-height:1.6;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  
-  /* Theme colors - Critical for LCP */
-  [data-theme="light"]{--bg-light:#FFFFFF;--bg-dark:#111111;--text-dark:#1f2937;--text-light:#f3f4f6}
-  [data-theme="dark"]{--bg-light:#111111;--bg-dark:#FFFFFF;--text-dark:#f3f4f6;--text-light:#1f2937}
-  body{background-color:var(--bg-light);color:var(--text-dark)}
-  
-  /* Typography - Above the fold */
-  h1,h2,h3,h4,h5,h6{font-weight:600;line-height:1.2}
-  h1{font-size:clamp(3rem,8vw,6rem);font-weight:700}
-  h2{font-size:1.25rem}
-  
-  /* Container - Critical for layout */
+  html{font-size:16px}
+  body{font-size:16px;line-height:1.6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+  [data-theme="light"]{background:#FFF;color:#1f2937}
+  [data-theme="dark"]{background:#111;color:#f3f4f6}
+  h1{font-size:clamp(3rem,8vw,6rem);font-weight:700;line-height:1.1}
   .container{max-width:1112px;margin:0 auto;padding:0 1rem}
-  
-  /* Skip link */
   .skip-link{position:absolute;top:-100px;left:0;z-index:9999}
 </style>
 

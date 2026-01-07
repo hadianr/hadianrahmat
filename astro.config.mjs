@@ -19,7 +19,7 @@ export default defineConfig({
     robotsTxt(),
   ],
   build: {
-    inlineStylesheets: 'auto', // Auto-inline critical CSS
+    inlineStylesheets: 'always', // Inline all CSS for better performance
   },
   vite: {
     build: {
