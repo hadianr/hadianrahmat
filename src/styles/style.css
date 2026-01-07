@@ -7,16 +7,11 @@
 @layer base {
   html {
     font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    text-size-adjust: 100%;
   }
   body {
     @apply bg-light dark:bg-dark text-dark-gray dark:text-gray font-inter;
     font-size: 1rem;
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   h1,h2,h3,h4,h5,h6 {
     @apply font-outfit;
