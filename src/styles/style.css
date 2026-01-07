@@ -6,24 +6,34 @@
 
 @layer base {
   html {
-    font-size: 100%;
+    font-size: 16px;
   }
   body {
     @apply bg-light dark:bg-dark text-dark-gray dark:text-gray font-inter;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.6;
   }
   h1,h2,h3,h4,h5,h6 {
     @apply font-outfit;
+    font-size: inherit;
   }
   h1 {
     @apply text-6xl sm:text-8xl;
+    font-size: clamp(3rem, 8vw, 6rem);
   }
   h2 {
     @apply text-xl font-semibold;
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+  }
+  h4 {
+    font-size: 1rem;
   }
   p,li,a {
     @apply font-inter;
+    font-size: inherit;
   }
   
   /* Ensure links are distinguishable */
