@@ -1,19 +1,26 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Hadian Rahmat - Full Stack Engineer",
+    "short_name": "HR Portfolio",
+    "description": "Professional portfolio and CV of Hadian Rahmat",
+    "start_url": "/",
+    "scope": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         },
         {
             "src": "/android-chrome-384x384.png",
             "sizes": "384x384",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#2563eb",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "portrait",
+    "lang": "en"
 }

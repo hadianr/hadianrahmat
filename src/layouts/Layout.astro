@@ -11,14 +11,36 @@ import "../styles/style.css";
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   // Set data-theme on html without triggering reflow
   document.documentElement.setAttribute('data-theme', t);
+  document.documentElement.setAttribute('lang', 'en');
   // Also set colorScheme for browser UI
   if (document.documentElement.style) {
     document.documentElement.style.colorScheme = 'light dark';
   }
 </script>
 
+<!-- Skip to main content link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <Navbar />
-<main class="container">
+<main id="main-content" class="container">
   <slot />
 </main>
 <Footer />
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2563eb;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }
+</style>

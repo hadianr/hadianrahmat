@@ -6,8 +6,11 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 ---
 
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0, maximum-scale=5.0" />
 <meta name="format-detection" content="telephone=no" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
 <!-- Script to defer CSS loading from critical path -->
 <script is:inline>
@@ -68,7 +71,8 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 <meta name="theme-color" content="#ffffff" />
 <meta name="color-scheme" content="light dark" />
 <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 
 <meta name="generator" content={Astro.generator} />

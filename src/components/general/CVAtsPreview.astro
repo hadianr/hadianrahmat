@@ -42,15 +42,16 @@ const groupedExperience = groupExperiencesByCompany(info.experience);
       <a
         href={`mailto:${info.socialMedia.email.replace("mailto:", "")}`}
         class="hover:underline"
+        aria-label="Email Hadian Rahmat"
       >
         {info.socialMedia.email.replace("mailto:", "")}
       </a>
       <span>|</span>
-      <a href={info.socialMedia.linkedin} class="hover:underline">
+      <a href={info.socialMedia.linkedin} class="hover:underline" aria-label="LinkedIn profile" rel="noopener noreferrer" target="_blank">
         LinkedIn
       </a>
       <span>|</span>
-      <a href={info.socialMedia.github} class="hover:underline">
+      <a href={info.socialMedia.github} class="hover:underline" aria-label="GitHub profile" rel="noopener noreferrer" target="_blank">
         GitHub
       </a>
     </div>

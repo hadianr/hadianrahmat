@@ -17,7 +17,7 @@ const isCvPage = Astro.url.pathname.startsWith("/cv");
     <ul class="flex items-center">
       {!isCvPage && (
         <li>
-          <a class="p-4 block text-lg" href="/cv?download=1" title="Download CV as PDF">
+          <a class="p-4 block text-lg" href="/cv?download=1" title="Download CV as PDF" aria-label="Download my CV as PDF">
             Download CV
           </a>
         </li>
