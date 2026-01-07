@@ -62,11 +62,13 @@ const isCvPage = Astro.url.pathname.startsWith("/cv");
     
     const darkModeHandler = () => {
       if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.theme = 'dark';
         isDark = false;
         themeBtn.innerHTML = sun;
         themeColor.content = '#111111';
       } else {
+        document.documentElement.setAttribute('data-theme', 'light');
         localStorage.theme = 'light';
         isDark = true;
         themeBtn.innerHTML = moon;
