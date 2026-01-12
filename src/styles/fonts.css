@@ -9,6 +9,10 @@
   src: local('Inter Regular'), local('Inter-Regular'),
        url('/assets/fonts/Inter/inter-v12-latin-regular.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
 }
 
 /* Inter - SemiBold 600 */
@@ -20,6 +24,10 @@
   src: local('Inter SemiBold'), local('Inter-SemiBold'),
        url('/assets/fonts/Inter/inter-v12-latin-600.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
 }
 
 /* Outfit - SemiBold 600 */
@@ -31,6 +39,10 @@
   src: local('Outfit SemiBold'), local('Outfit-SemiBold'),
        url('/assets/fonts/Outfit/outfit-v6-latin-600.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  size-adjust: 100%;
+  ascent-override: 88%;
+  descent-override: 22%;
+  line-gap-override: 0%;
 }
 
 /* Outfit - Bold 700 */
@@ -42,4 +54,8 @@
   src: local('Outfit Bold'), local('Outfit-Bold'),
        url('/assets/fonts/Outfit/outfit-v6-latin-700.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  size-adjust: 100%;
+  ascent-override: 88%;
+  descent-override: 22%;
+  line-gap-override: 0%;
 }

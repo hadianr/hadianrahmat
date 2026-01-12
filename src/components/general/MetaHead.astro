@@ -13,11 +13,11 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
-<!-- Preload critical fonts to eliminate layout shift -->
-<link rel="preload" href="/assets/fonts/Inter/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+<!-- Preload critical fonts to eliminate layout shift - HIGH PRIORITY -->
+<link rel="preload" href="/assets/fonts/Outfit/outfit-v6-latin-700.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
+<link rel="preload" href="/assets/fonts/Inter/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
 <link rel="preload" href="/assets/fonts/Inter/inter-v12-latin-600.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/Outfit/outfit-v6-latin-600.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/assets/fonts/Outfit/outfit-v6-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 
 <!-- Prefetch future navigation pages -->
 <link rel="prefetch" href="/cv" />

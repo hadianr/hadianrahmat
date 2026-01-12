@@ -14,10 +14,10 @@ const formatText = (text: string) => {
 };
 ---
 
-<section>
+<section style="min-height:600px">
   <p class="mt-[32px]">Hey, I'm</p>
-  <h1>{name}</h1>
-  <div class="text-lg mb-16 space-y-4 about-content">
+  <h1 style="min-height:4rem">{name}</h1>
+  <div class="text-lg mb-16 space-y-4 about-content" style="min-height:150px">
     <Fragment set:html={formatText(about)} />
   </div>
   <!-- CTA to CV page -->
