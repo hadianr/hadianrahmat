@@ -2,6 +2,9 @@
 
 A high-performance, modern portfolio website built with Astro, featuring **Perfect 100/100 Lighthouse Score** across all categories and optimized for Core Web Vitals.
 
+🌐 **Live Site**: [hadianrahmat.com](https://hadianrahmat.com)  
+💼 **LinkedIn**: [linkedin.com/in/hadianr](https://www.linkedin.com/in/hadianr/)
+
 [![Performance](https://img.shields.io/badge/Lighthouse-100%2F100-brightgreen)]()
 [![Accessibility](https://img.shields.io/badge/Accessibility-100%2F100-brightgreen)]()
 [![Best Practices](https://img.shields.io/badge/Best%20Practices-100%2F100-brightgreen)]()
@@ -275,13 +278,6 @@ Test your deployed site:
 https://pagespeed.web.dev/
 ```
 
-## 📚 Documentation
-
-For detailed optimization documentation, see:
-- [OPTIMIZATION_COMPLETE.md](OPTIMIZATION_COMPLETE.md) - Complete optimization summary
-- [PERFORMANCE_OPTIMIZATION.md](PERFORMANCE_OPTIMIZATION.md) - Technical details
-- [TESTING_CHECKLIST.md](TESTING_CHECKLIST.md) - Testing guide
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
@@ -293,9 +289,9 @@ This project is [MIT](LICENSE) licensed.
 ## 👤 Author
 
 **Hadian Rahmat**
-- Website: [Your Website URL]
+- Website: [hadianrahmat.com](https://hadianrahmat.com)
 - GitHub: [@hadianr](https://github.com/hadianr)
-- LinkedIn: [Your LinkedIn]
+- LinkedIn: [linkedin.com/in/hadianr](https://www.linkedin.com/in/hadianr/)
 
 ## ⭐ Show your support
 
