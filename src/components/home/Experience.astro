@@ -63,7 +63,7 @@ const formatCompanyDateRange = (roles: any[]) => {
       groupedExperiences.map((group: any) => (
         <div class="my-16">
           <div class="flex justify-between items-center flex-wrap mb-2">
-            <h3 class="text-xl font-semibold">{group.company}</h3>
+            <h3 class="text-xl font-semibold text-dark-gray dark:!text-white">{group.company}</h3>
             {group.roles.length > 1 && (
               <p class="text-sm text-gray-600 dark:text-gray-400">
                 {formatCompanyDateRange(group.roles)}
@@ -77,8 +77,8 @@ const formatCompanyDateRange = (roles: any[]) => {
           {group.roles.map((item: any, index: number) => (
             <div class={index > 0 ? "mt-8" : ""}>
               <div class="flex justify-between items-center flex-wrap">
-                <h3 class="text-l font-semibold text-blue">{item.role || item.location}</h3>
-                <p class="text-sm flex items-center gap-2">
+                <h3 class="text-l font-semibold text-blue dark:!text-white">{item.role || item.location}</h3>
+                <p class="text-sm flex items-center gap-2 dark:text-gray-400">
                   <span>
                     {item.startDate} - {item.endDate}
                   </span>
@@ -127,5 +127,10 @@ const formatCompanyDateRange = (roles: any[]) => {
   /* Bold keyword styling */
   strong {
     font-weight: 600;
+  }
+  
+  /* Force h3 to use proper colors in dark mode */
+  :global(.dark) h3 {
+    color: rgb(255 255 255) !important;
   }
 </style>
