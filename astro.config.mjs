@@ -21,27 +21,39 @@ export default defineConfig({
     preloadCSS(),
   ],
   build: {
-    inlineStylesheets: 'always', // Inline all CSS for better performance
+    inlineStylesheets: 'always',
+    assets: '_astro',
   },
   vite: {
     build: {
       cssCodeSplit: false,
-      minify: 'esbuild',
+      minify: 'terser',
       target: 'es2020',
       cssMinify: 'lightningcss',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          passes: 2,
+        },
+        mangle: true,
+        format: {
+          comments: false,
+        },
+      },
       rollupOptions: {
         output: {
-          assetFileNames: (assetInfo) => {
-            if (assetInfo.name.endsWith('.css')) {
-              return 'assets/[name].[hash][extname]';
-            }
-            return 'assets/[name].[hash][extname]';
-          },
-        }
+          manualChunks: undefined,
+          assetFileNames: 'assets/[name].[hash][extname]',
+          chunkFileNames: 'assets/[name].[hash].js',
+          entryFileNames: 'assets/[name].[hash].js',
+        },
       },
     },
     ssr: {
       noExternal: ['@astrojs/*'],
+    },
+    optimizeDeps: {
+      exclude: ['@astrojs/*'],
     },
   },
   compressHTML: true,

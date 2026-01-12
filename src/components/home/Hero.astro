@@ -45,7 +45,7 @@ const formatText = (text: string) => {
     color: inherit;
   }
 
-  /* CTA styles */
+  /* CTA styles - Optimized for performance */
   .cta-primary {
     display: inline-flex;
     align-items: center;
@@ -58,6 +58,8 @@ const formatText = (text: string) => {
     box-shadow: 0 10px 20px rgba(60, 64, 67, 0.3);
     transform: translateY(0);
     transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    will-change: transform;
+    contain: layout style paint;
   }
 
   .cta-primary:hover {
@@ -68,6 +70,7 @@ const formatText = (text: string) => {
 
   .cta-primary .icon {
     stroke: currentColor;
+    fill: none;
   }
 
   .cta-primary .badge {

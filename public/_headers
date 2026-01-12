@@ -7,8 +7,14 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   
-  # Cache headers untuk assets
-  Cache-Control: public, max-age=31536000, immutable
+  # Performance hints
+  Link: </assets/fonts/Inter/inter-v12-latin-regular.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </assets/fonts/Inter/inter-v12-latin-600.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </assets/fonts/Outfit/outfit-v6-latin-600.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </assets/fonts/Outfit/outfit-v6-latin-700.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  
+  # Cache headers for assets
+  Cache-Control: public, max-age=0, must-revalidate
 
 /*.css
   Cache-Control: public, max-age=31536000, immutable
@@ -20,4 +26,7 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /*.html
+  Cache-Control: public, max-age=0, must-revalidate
+  
+/sw.js
   Cache-Control: public, max-age=0, must-revalidate
