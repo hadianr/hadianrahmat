@@ -14,6 +14,20 @@ What excites me most is impact through people and systems. I lead with technical
 
   experience: [
     {
+      company: "Nawaetu.com",
+      role: "Founder & Full Stack Engineer",
+      startDate: "Jan 2026",
+      endDate: "Present",
+      employmentType: "Self Employed / Project",
+      city: "Bandung, Indonesia",
+      description: [
+        "Founded and engineered Nawaetu (nawaetu.com), an open-source Progressive Web Application (PWA) designed for gamified habit tracking and personal growth management.",
+        "- Architected and built full-stack application end-to-end using TypeScript, Next.js, React, Tailwind CSS, and Supabase, delivering offline-first functionality and optimized cross-platform performance.",
+        "- Engineered core product features, including gamified habit tracking mechanics, interactive progress analytics dashboards, and localized multi-language UI support.",
+        "- Established open-source strategy and product roadmap, implementing a dual-licensing model (AGPLv3 for community use and commercial licensing) while managing automated deployment on Vercel.",
+      ],  
+    },
+    {
       company: "Staffinc Group",
       role: "Full Stack Engineer",
       startDate: "Sep 2025",
